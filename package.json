@@ -1,0 +1,23 @@
+{
+  "name": "sp-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haris867/sp-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haris867/sp-2/issues"
+  },
+  "homepage": "https://github.com/haris867/sp-2#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
