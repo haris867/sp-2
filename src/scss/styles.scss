@@ -1,0 +1,107 @@
+body {
+  color: white;
+  background-color: #30044e !important;
+  font-family: "Manrope", sans-serif !important;
+}
+
+header {
+  min-height: 140px;
+}
+
+.logo-container img {
+  max-width: 200px;
+}
+
+.hamburger svg {
+  color: white;
+  min-width: 50px;
+}
+
+.heading {
+  color: white;
+  &-1 {
+    font-weight: 900;
+    font-size: 1.6em;
+  }
+  &-2 {
+    font-size: 1.5em;
+    font-weight: 100;
+  }
+}
+
+.listing-img {
+  width: 100%;
+}
+
+.rounded-circle {
+  width: 30px;
+  height: 30px;
+}
+
+.author span {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.container h3 {
+  font-size: 1.35em;
+  margin-bottom: 0;
+}
+
+p {
+  color: white;
+  font-weight: 200;
+  font-size: 1.15em;
+}
+
+.heading span {
+  color: #fbb1e1;
+}
+
+.btn-outline-primary {
+  background-color: #fbb1e1 !important;
+  color: #30044e !important;
+  border-color: #30044e !important;
+  width: 190px;
+  font-size: 1.2em !important;
+  font-weight: 600 !important;
+  border-radius: 13px !important;
+}
+.btn-outline-primary:hover {
+  background-color: #30044e !important;
+  color: #fbb1e1 !important;
+  border-color: #fbb1e1 !important;
+}
+
+.btn-outline-secondary {
+  background-color: #30044e !important;
+  color: #fbb1e1 !important;
+  border-color: #fbb1e1 !important;
+  width: 190px;
+  font-size: 1.2em !important;
+  font-weight: 600 !important;
+  border-radius: 13px !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #fbb1e1 !important;
+  color: #30044e !important;
+}
+
+footer {
+  min-height: 120px;
+}
+
+.copyright p {
+  font-size: 0.8em;
+}
+
+.footer-logo-container img {
+  max-width: 80px;
+}
+
+footer ul {
+  color: white;
+  list-style: none;
+}
