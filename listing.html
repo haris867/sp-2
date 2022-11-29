@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auction House</title>
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="d-flex justify-content-between">
+      <div class="logo-container align-self-center">
+        <img
+          class="m-3"
+          src="images/auction-logo.png"
+          alt="Auction House logo"
+        />
+      </div>
+      <div class="hamburger d-flex">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          fill="currentColor"
+          class="bi bi-list align-self-center"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          />
+        </svg>
+      </div>
+    </header>
+    <main class="m-4">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-md-9 col-lg-9 col-xl-8">
+            <h1 class="heading fs-1">SEGA Dreamcast</h1>
+          </div>
+          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
+            <div class="listing">
+              <a href="profile.html">
+                <div class="col-12 d-flex author fs-4 fw-bold">
+                  <img
+                    class="rounded-circle m-1 hover-zoom"
+                    src="images/messi-profile.jpg"
+                    alt="Profile pic"
+                  />
+                  <span class="align-items-center">Haris13</span>
+                </div>
+              </a>
+              <img
+                class="listing-img mb-3 mt-2"
+                src="images/sega.jpg"
+                alt="Image of SEGA"
+              />
+              <div class="col-12 d-flex flex-wrap justify-content-between">
+                <div>
+                  <p class="fs-4 fw-bold me-2">Highest bid:</p>
+                </div>
+                <div class="d-flex">
+                  <span class="highlighted mt-1 me-1">now:</span>
+                  <p><span class="fs-4 fw-bold">313</span> credits</p>
+                </div>
+              </div>
+              <div class="row slides mb-4">
+                <div class="col-3">
+                  <img
+                    class="listing-img"
+                    src="images/sega.jpg"
+                    alt="Image of SEGA"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    class="listing-img"
+                    src="images/sega.jpg"
+                    alt="Image of SEGA"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    class="listing-img"
+                    src="images/sega.jpg"
+                    alt="Image of SEGA"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    class="listing-img"
+                    src="images/sega.jpg"
+                    alt="Image of SEGA"
+                  />
+                </div>
+              </div>
+              <div class="col-12 d-flex justify-content-between">
+                <div>
+                  <p class="fs-5 highlighted fw-bold">Ends in:</p>
+                </div>
+                <div class="d-flex fs-5">
+                  <div class="days ms-1">22D</div>
+                  <div class="hours ms-1">11H</div>
+                  <div class="minutes ms-1">24M</div>
+                  <div class="seconds ms-1">59S</div>
+                </div>
+              </div>
+              <div class="btn-container d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-primary mb-4">
+                  PLACE BID
+                </button>
+              </div>
+              <div class="col-12 mb-5">
+                <p class="fs-4 fw-bold">Description</p>
+                <p class="fs-5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p class="fs-5">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur.
+                </p>
+              </div>
+              <div class="bids col-12 mb-5">
+                <p class="fs-4 fw-bold">Bids</p>
+                <div class="bid mb-4">
+                  <div
+                    class="col-12 d-flex justify-content-between author fs-4 fw-bold"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="rounded-circle m-1 me-2"
+                        src="images/messi-profile.jpg"
+                        alt="Profile pic"
+                      />
+                      <span class="align-self-center">Haris13</span>
+                    </div>
+                    <div class="d-flex">
+                      <span class="align-self-center">313 credits</span>
+                    </div>
+                  </div>
+                  <div class="highlighted">
+                    <span class="me-3">21.11.22</span>
+                    <span>19:52</span>
+                  </div>
+                </div>
+                <div class="bid mb-4">
+                  <div
+                    class="col-12 d-flex justify-content-between author fs-4 fw-bold"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="rounded-circle m-1 me-2"
+                        src="images/messi-profile.jpg"
+                        alt="Profile pic"
+                      />
+                      <span class="align-self-center">Haris13</span>
+                    </div>
+                    <div class="d-flex">
+                      <span class="align-self-center">313 credits</span>
+                    </div>
+                  </div>
+                  <div class="highlighted">
+                    <span class="me-3">21.11.22</span>
+                    <span>19:52</span>
+                  </div>
+                </div>
+                <div class="bid mb-4">
+                  <div
+                    class="col-12 d-flex justify-content-between author fs-4 fw-bold"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="rounded-circle m-1 me-2"
+                        src="images/messi-profile.jpg"
+                        alt="Profile pic"
+                      />
+                      <span class="align-self-center">Haris13</span>
+                    </div>
+                    <div class="d-flex">
+                      <span class="align-self-center">313 credits</span>
+                    </div>
+                  </div>
+                  <div class="highlighted">
+                    <span class="me-3">21.11.22</span>
+                    <span>19:52</span>
+                  </div>
+                </div>
+                <div class="bid mb-4">
+                  <div
+                    class="col-12 d-flex justify-content-between author fs-4 fw-bold"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="rounded-circle m-1 me-2"
+                        src="images/messi-profile.jpg"
+                        alt="Profile pic"
+                      />
+                      <span class="align-self-center">Haris13</span>
+                    </div>
+                    <div class="d-flex">
+                      <span class="align-self-center">313 credits</span>
+                    </div>
+                  </div>
+                  <div class="highlighted">
+                    <span class="me-3">21.11.22</span>
+                    <span>19:52</span>
+                  </div>
+                </div>
+                <div class="bid mb-4">
+                  <div
+                    class="col-12 d-flex justify-content-between author fs-4 fw-bold"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="rounded-circle m-1 me-2"
+                        src="images/messi-profile.jpg"
+                        alt="Profile pic"
+                      />
+                      <span class="align-self-center">Haris13</span>
+                    </div>
+                    <div class="d-flex">
+                      <span class="align-self-center">313 credits</span>
+                    </div>
+                  </div>
+                  <div class="highlighted">
+                    <span class="me-3">21.11.22</span>
+                    <span>19:52</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="d-flex justify-content-between">
+      <div class="copyright align-self-center mx-4">
+        <p>Aution House &copy</p>
+      </div>
+      <div class="footer-logo-container align-self-center">
+        <img src="images/auction-logo-icon.png" alt="Auction House logo icon" />
+      </div>
+      <div class="footer-links align-self-center mx-4">
+        <ul>
+          <li>Home</li>
+          <li>Listings</li>
+          <li>Profile</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
