@@ -154,11 +154,30 @@
                 </div>
               </div>
               <div class="btn-container d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-primary mb-4">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mb-4"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#place-bid"
+                  aria-expanded="false"
+                  aria-controls="place-bid"
+                >
                   PLACE BID
                 </button>
               </div>
-              <div class="d-none">
+              <div class="btn-container d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary mb-4"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#view-bids"
+                  aria-expanded="false"
+                  aria-controls="view-bids"
+                >
+                  VIEW BIDS
+                </button>
+              </div>
+              <div class="collapse" id="place-bid">
                 <div class="modal-content rounded-4 shadow">
                   <div class="modal-header p-5 pb-4 border-bottom-0">
                     <h1 class="fw-bold mb-0 fs-2">Place your bid</h1>
@@ -184,20 +203,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 my-5">
-                <p class="fs-4 fw-bold">Description</p>
-                <p class="fs-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <p class="fs-5">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
-                </p>
-              </div>
-              <div class="bids col-12 mb-5">
+              <div class="bids col-12 mb-5 mt-3 collapse" id="view-bids">
                 <p class="fs-4 fw-bold">Bids</p>
                 <div class="bid mb-4">
                   <div
@@ -304,6 +310,19 @@
                     <span>19:52</span>
                   </div>
                 </div>
+              </div>
+              <div class="col-12 my-5">
+                <p class="fs-4 fw-bold">Description</p>
+                <p class="fs-5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p class="fs-5">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur.
+                </p>
               </div>
             </div>
           </div>
