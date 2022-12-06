@@ -19,27 +19,65 @@
   </head>
   <body>
     <header class="d-flex justify-content-between">
-      <div class="logo-container align-self-center">
-        <img
-          class="m-3"
-          src="images/auction-logo.png"
-          alt="Auction House logo"
-        />
-      </div>
-      <div class="hamburger d-flex">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          fill="currentColor"
-          class="bi bi-list align-self-center"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+      <a href="index.html" class="align-self-center">
+        <div class="logo-container">
+          <img
+            class="m-3"
+            src="images/auction-logo.png"
+            alt="Auction House logo"
           />
-        </svg>
+        </div>
+      </a>
+      <div class="d-flex position-absolute hamburger">
+        <nav class="position-relative navbar navbar-dark" aria-label="navbar">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler position-absolute hamburger hamburger-icon"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbar"
+              aria-controls="navbar"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="currentColor"
+                class="bi bi-list align-self-center"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="collapse navbar-collapse position-absolute hamburger hamburger-menu px-4"
+              id="navbar"
+            >
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listings.html">Listings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Profile</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
     <main class="m-4">
@@ -120,5 +158,6 @@
         </ul>
       </div>
     </footer>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

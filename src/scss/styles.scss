@@ -18,8 +18,44 @@ header {
   max-width: 200px;
 }
 
+.hamburger {
+  top: 20px;
+  right: 5px;
+  &-icon {
+    color: map-get($colours, tertiary) !important;
+    border: map-get($colours, tertiary) !important;
+  }
+  &-menu {
+    top: 80px;
+    right: 10px;
+    border: 2px solid map-get($colours, secondary);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: map-get($colours, primary) !important;
+  }
+}
+
+.search-icon {
+  background-color: map-get($colours, primary) !important;
+  border: none;
+  color: map-get($colours, tertiary) !important;
+}
+
+.nav-item a {
+  color: map-get($colours, tertiary) !important;
+  font-size: 1.2em;
+}
+
+.nav-item a:hover {
+  font-style: italic;
+}
+
 .hamburger svg {
   min-width: 50px;
+}
+
+nav {
+  color: white;
 }
 
 .listing a {
@@ -51,17 +87,14 @@ header {
   transition: all ease-in;
 }
 
-// .heading {
-//   color: map-get($colours, tertiary);
-//   &-1 {
-//     font-weight: 900;
-//     font-size: 1.6em;
-//   }
-//   &-2 {
-//     font-size: 2.5em;
-//     font-weight: 100;
-//   }
-// }
+.listing-img::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  color: red;
+}
 
 .listing-img {
   width: 100%;
@@ -72,9 +105,31 @@ header {
   height: 30px;
 }
 
+.bids-icon {
+  top: 10px;
+  width: 2rem;
+  height: 2rem;
+  color: map-get($colours, primary);
+  background-color: map-get($colours, secondary);
+}
+
 .profile img {
   width: 80px;
   height: 80px;
+}
+
+.search-field {
+  width: 100%;
+}
+.search-input {
+  width: 80%;
+}
+.search-button {
+  width: 20%;
+}
+
+#display {
+  display: none !important;
 }
 
 .bids img {

@@ -19,142 +19,236 @@
   </head>
   <body>
     <header class="d-flex justify-content-between">
-      <div class="logo-container align-self-center">
-        <img
-          class="m-3"
-          src="images/auction-logo.png"
-          alt="Auction House logo"
-        />
-      </div>
-      <div class="hamburger d-flex">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          fill="currentColor"
-          class="bi bi-list align-self-center"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+      <a href="index.html" class="align-self-center">
+        <div class="logo-container">
+          <img
+            class="m-3"
+            src="images/auction-logo.png"
+            alt="Auction House logo"
           />
-        </svg>
+        </div>
+      </a>
+      <div class="d-flex position-absolute hamburger">
+        <nav class="position-relative navbar navbar-dark" aria-label="navbar">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler position-absolute hamburger hamburger-icon"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbar"
+              aria-controls="navbar"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="currentColor"
+                class="bi bi-list align-self-center"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="collapse navbar-collapse position-absolute hamburger hamburger-menu px-4"
+              id="navbar"
+            >
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listings.html">Listings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Profile</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
     <main class="m-4">
       <div class="container">
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-md-9 col-lg-9 col-xl-8">
+          <div
+            class="d-flex justify-content-between col-12 col-md-9 col-lg-8 col-xl-7"
+          >
             <h1 class="">Listings</h1>
+
+            <button
+              class="search-icon"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#search-collapse"
+              aria-expanded="false"
+              aria-controls="search-collapse"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                class="bi bi-search align-self-center mb-1"
+                data-toggle="collapse"
+                data-target=".collapse"
+                aria-expanded="false"
+                aria-controls="search-collapse"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
           </div>
-          
+          <div
+            class="d-flex justify-content-between col-12 col-md-9 col-lg-8 col-xl-7"
+          >
+            <div id="search-collapse" class="collapse mt-2 col-12 search-field">
+              <input
+                type="text"
+                class="form-control rounded-3"
+                placeholder="Search"
+              />
+              <button
+                class="ms-2 py-2 btn btn-outline-primary rounded-3 search-button"
+                type="submit"
+              >
+                SEARCH
+              </button>
+            </div>
+          </div>
           <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
             <div class="listing">
               <a href="profile.html">
-              <div class="col-12 d-flex author fs-4 fw-bold">
-                <img
-                  class="rounded-circle m-1 hover-zoom"
-                  src="images/messi-profile.jpg"
-                  alt="Profile pic"
-                />
-                <span class="align-items-center">Haris13</span>
-              </div>
+                <div class="col-12 d-flex author fs-4 fw-bold">
+                  <img
+                    class="rounded-circle m-1 hover-zoom"
+                    src="images/messi-profile.jpg"
+                    alt="Profile pic"
+                  />
+                  <span class="align-items-center">Haris13</span>
+                </div>
               </a>
               <a href="listing.html">
-              <img
-                class="listing-img mb-3 mt-2"
-                src="images/sega.jpg"
-                alt="Image of SEGA"
-              />
-              <div class="col-12 d-flex flex-wrap justify-content-between">
-                <div>
-                  <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
-                </div>
-                <div class="d-flex">
-                  <span class="highlighted mt-1 me-1">now:</span>
-                  <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </a>
-          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
-            <div class="listing">
-              <div class="col-12 d-flex author fs-4 fw-bold">
                 <img
-                  class="rounded-circle m-1"
-                  src="images/messi-profile.jpg"
-                  alt="Profile pic"
+                  class="listing-img mb-3 mt-2"
+                  src="images/sega.jpg"
+                  alt="Image of SEGA"
                 />
-                <span class="align-items-center">Haris13</span>
-              </div>
-              <img
-                class="listing-img mb-3 mt-2"
-                src="images/sega.jpg"
-                alt="Image of SEGA"
-              />
-              <div class="col-12 d-flex flex-wrap justify-content-between">
-                <div>
-                  <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                <div class="col-12 d-flex flex-wrap justify-content-between">
+                  <div>
+                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                  </div>
+                  <div class="d-flex">
+                    <span class="highlighted mt-1 me-1">now:</span>
+                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
+                  </div>
                 </div>
-                <div class="d-flex">
-                  <span class="highlighted mt-1 me-1">now:</span>
-                  <p><span class="fs-4 fw-bold">313</span> credits</p>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
           <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
             <div class="listing">
-              <div class="col-12 d-flex author fs-4 fw-bold">
+              <a href="profile.html">
+                <div class="col-12 d-flex author fs-4 fw-bold">
+                  <img
+                    class="rounded-circle m-1 hover-zoom"
+                    src="images/messi-profile.jpg"
+                    alt="Profile pic"
+                  />
+                  <span class="align-items-center">Haris13</span>
+                </div>
+              </a>
+              <a href="listing.html">
                 <img
-                  class="rounded-circle m-1"
-                  src="images/messi-profile.jpg"
-                  alt="Profile pic"
+                  class="listing-img mb-3 mt-2"
+                  src="images/sega.jpg"
+                  alt="Image of SEGA"
                 />
-                <span class="align-items-center">Haris13</span>
-              </div>
-              <img
-                class="listing-img mb-3 mt-2"
-                src="images/sega.jpg"
-                alt="Image of SEGA"
-              />
-              <div class="col-12 d-flex flex-wrap justify-content-between">
-                <div>
-                  <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                <div class="col-12 d-flex flex-wrap justify-content-between">
+                  <div>
+                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                  </div>
+                  <div class="d-flex">
+                    <span class="highlighted mt-1 me-1">now:</span>
+                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
+                  </div>
                 </div>
-                <div class="d-flex">
-                  <span class="highlighted mt-1 me-1">now:</span>
-                  <p><span class="fs-4 fw-bold">313</span> credits</p>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
           <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
             <div class="listing">
-              <div class="col-12 d-flex author fs-4 fw-bold">
+              <a href="profile.html">
+                <div class="col-12 d-flex author fs-4 fw-bold">
+                  <img
+                    class="rounded-circle m-1 hover-zoom"
+                    src="images/messi-profile.jpg"
+                    alt="Profile pic"
+                  />
+                  <span class="align-items-center">Haris13</span>
+                </div>
+              </a>
+              <a href="listing.html">
                 <img
-                  class="rounded-circle m-1"
-                  src="images/messi-profile.jpg"
-                  alt="Profile pic"
+                  class="listing-img mb-3 mt-2"
+                  src="images/sega.jpg"
+                  alt="Image of SEGA"
                 />
-                <span class="align-items-center">Haris13</span>
-              </div>
-              <img
-                class="listing-img mb-3 mt-2"
-                src="images/sega.jpg"
-                alt="Image of SEGA"
-              />
-              <div class="col-12 d-flex flex-wrap justify-content-between">
-                <div>
-                  <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                <div class="col-12 d-flex flex-wrap justify-content-between">
+                  <div>
+                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                  </div>
+                  <div class="d-flex">
+                    <span class="highlighted mt-1 me-1">now:</span>
+                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
+                  </div>
                 </div>
-                <div class="d-flex">
-                  <span class="highlighted mt-1 me-1">now:</span>
-                  <p><span class="fs-4 fw-bold">313</span> credits</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
+            <div class="listing">
+              <a href="profile.html">
+                <div class="col-12 d-flex author fs-4 fw-bold">
+                  <img
+                    class="rounded-circle m-1 hover-zoom"
+                    src="images/messi-profile.jpg"
+                    alt="Profile pic"
+                  />
+                  <span class="align-items-center">Haris13</span>
                 </div>
-              </div>
+              </a>
+              <a href="listing.html">
+                <img
+                  class="listing-img mb-3 mt-2"
+                  src="images/sega.jpg"
+                  alt="Image of SEGA"
+                />
+                <div class="col-12 d-flex flex-wrap justify-content-between">
+                  <div>
+                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
+                  </div>
+                  <div class="d-flex">
+                    <span class="highlighted mt-1 me-1">now:</span>
+                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -175,5 +269,6 @@
         </ul>
       </div>
     </footer>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

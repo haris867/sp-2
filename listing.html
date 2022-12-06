@@ -19,27 +19,65 @@
   </head>
   <body>
     <header class="d-flex justify-content-between">
-      <div class="logo-container align-self-center">
-        <img
-          class="m-3"
-          src="images/auction-logo.png"
-          alt="Auction House logo"
-        />
-      </div>
-      <div class="hamburger d-flex">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="40"
-          height="40"
-          fill="currentColor"
-          class="bi bi-list align-self-center"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+      <a href="index.html" class="align-self-center">
+        <div class="logo-container">
+          <img
+            class="m-3"
+            src="images/auction-logo.png"
+            alt="Auction House logo"
           />
-        </svg>
+        </div>
+      </a>
+      <div class="d-flex position-absolute hamburger">
+        <nav class="position-relative navbar navbar-dark" aria-label="navbar">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler position-absolute hamburger hamburger-icon"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbar"
+              aria-controls="navbar"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="currentColor"
+                class="bi bi-list align-self-center"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="collapse navbar-collapse position-absolute hamburger hamburger-menu px-4"
+              id="navbar"
+            >
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="listings.html">Listings</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Profile</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     </header>
     <main class="m-4">
@@ -120,7 +158,33 @@
                   PLACE BID
                 </button>
               </div>
-              <div class="col-12 mb-5">
+              <div class="d-none">
+                <div class="modal-content rounded-4 shadow">
+                  <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h1 class="fw-bold mb-0 fs-2">Place your bid</h1>
+                  </div>
+                  <div class="modal-body mb-6 p-5 pt-0 d-flex">
+                    <form class="d-flex mx-auto">
+                      <div class="form-floating mb-3 d-flex">
+                        <input
+                          type="text"
+                          class="form-control rounded-3"
+                          id="floatingInput"
+                          placeholder="Amount"
+                        />
+                        <label for="floatingInput">Amount</label>
+                        <button
+                          class="py-2 ms-2 btn btn-outline-primary rounded-3"
+                          type="submit"
+                        >
+                          BID
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 my-5">
                 <p class="fs-4 fw-bold">Description</p>
                 <p class="fs-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -261,5 +325,6 @@
         </ul>
       </div>
     </footer>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
