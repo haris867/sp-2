@@ -1,3 +1,4 @@
+import * as storage from "../../handlers/storage.mjs";
 export async function login(profile) {
   const loginUrl = "https://api.noroff.dev/api/v1/auction/auth/login";
   const body = JSON.stringify(profile);
@@ -10,6 +11,8 @@ export async function login(profile) {
     body: body,
   });
 
-  const result = await response.json();
-  console.log(result);
+  const { accessToken, ...user } = await response.json();
+
+  storage.save("token", accessToken);
+  storage.save("profile", user);
 }
