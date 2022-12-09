@@ -89,22 +89,28 @@
                 <h1 class="fw-bold mb-0 fs-2">Login</h1>
               </div>
               <div class="modal-body p-5 pt-0">
-                <form class="">
+                <form id="loginForm">
                   <div class="form-floating mb-3">
                     <input
+                      name="email"
                       type="email"
                       class="form-control rounded-3"
                       id="floatingInput"
                       placeholder="name@stud.noroff.no"
+                      required
+                      pattern="[\w\-.]+@(stud.)?noroff.no$"
                     />
                     <label for="floatingInput">Email address</label>
                   </div>
                   <div class="form-floating">
                     <input
+                      name="password"
                       type="password"
                       class="form-control rounded-3 mb-3"
                       id="floatingPassword"
                       placeholder="Password"
+                      required
+                      minlength="8"
                     />
                     <label for="floatingPassword">Password</label>
                   </div>
@@ -127,7 +133,7 @@
         </div>
       </div>
     </main>
-    <footer class="d-flex justify-content-between fixed-bottom">
+    <footer class="d-flex justify-content-between position-relative">
       <div class="copyright align-self-center mx-4">
         <p>Aution House &copy</p>
       </div>
@@ -143,5 +149,6 @@
       </div>
     </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/js/index.mjs" type="module"></script>
   </body>
 </html>

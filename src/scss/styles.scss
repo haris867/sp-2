@@ -137,6 +137,11 @@ nav {
   height: 40px;
 }
 
+.success-message {
+  color: map-get($colours, secondary);
+  display: none;
+}
+
 svg {
   cursor: pointer;
 }
@@ -177,6 +182,7 @@ svg {
 
 footer {
   min-height: 120px;
+  bottom: 0;
 }
 
 .copyright p {

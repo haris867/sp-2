@@ -88,41 +88,60 @@
               <div class="modal-header p-5 pb-4 border-bottom-0">
                 <h1 class="fw-bold mb-0 fs-2">Register</h1>
               </div>
+
               <div class="modal-body p-5 pt-0">
-                <form class="">
+                <div class="success-message mb-3">
+                  <h2 class="fs-5">You're account is registered!</h2>
+                </div>
+                <form id="registerForm">
                   <div class="form-floating mb-3">
                     <input
+                      name="name"
                       type="text"
                       class="form-control rounded-3"
                       id="floatingInput"
                       placeholder="Your username"
+                      title="The name can not be longer than 20 charachters and must not contain punctuation symbols apart from underscore (_)"
+                      maxlength="20"
+                      required
+                      pattern="^[\w]+$"
                     />
                     <label for="floatingInput">Name</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input
-                      type="email"
+                      name="avatar"
+                      type="url"
                       class="form-control rounded-3"
                       id="floatingInput"
-                      placeholder="name@stud.noroff.no"
+                      placeholder="url.com"
+                      title="You must provide a valid URL as your avatar"
                     />
                     <label for="floatingInput">Avatar(URL)</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input
-                      type="url"
+                      name="email"
+                      type="email"
                       class="form-control rounded-3"
                       id="floatingInput"
-                      placeholder="123url.com"
+                      placeholder="stud@stud.noroff.no"
+                      title="The email value must be a valid stud.noroff.no or noroff.no email address"
+                      required
+                      pattern="[\w\-.]+@(stud.)?noroff.no$"
                     />
                     <label for="floatingInput">Email address</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input
+                      name="password"
                       type="password"
                       class="form-control rounded-3 mb-3"
                       id="floatingPassword"
                       placeholder="Password"
+                      title="Password must be at least 8 characters"
+                      required
+                      minlength="8"
                     />
                     <label for="floatingPassword">Password</label>
                   </div>
@@ -145,21 +164,7 @@
         </div>
       </div>
     </main>
-    <footer class="d-flex justify-content-between">
-      <div class="copyright align-self-center mx-4">
-        <p>Aution House &copy</p>
-      </div>
-      <div class="footer-logo-container align-self-center">
-        <img src="images/auction-logo-icon.png" alt="Auction House logo icon" />
-      </div>
-      <div class="footer-links align-self-center mx-4">
-        <ul>
-          <li>Home</li>
-          <li>Listings</li>
-          <li>Profile</li>
-        </ul>
-      </div>
-    </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/index.mjs" type="module"></script>
   </body>
 </html>
