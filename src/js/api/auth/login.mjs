@@ -1,4 +1,4 @@
-import * as storage from "../../handlers/storage.mjs";
+import * as storage from "../../storage/index.mjs";
 export async function login(profile) {
   const loginUrl = "https://api.noroff.dev/api/v1/auction/auth/login";
   const body = JSON.stringify(profile);

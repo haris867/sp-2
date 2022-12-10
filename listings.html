@@ -82,7 +82,7 @@
     </header>
     <main class="m-4">
       <div class="container">
-        <div class="row d-flex justify-content-center">
+        <div class="listings-container row d-flex justify-content-center">
           <div
             class="d-flex justify-content-between col-12 col-md-9 col-lg-8 col-xl-7"
           >
@@ -115,9 +115,10 @@
             </button>
           </div>
           <div
-            class="d-flex justify-content-between col-12 col-md-9 col-lg-8 col-xl-7"
+            id="search-collapse"
+            class="collapse justify-content-between col-12 col-md-9 col-lg-8 col-xl-7"
           >
-            <div id="search-collapse" class="collapse mt-2 col-12 search-field">
+            <div class="d-flex mt-2 col-12 search-field">
               <input
                 type="text"
                 class="form-control rounded-3"
@@ -129,126 +130,6 @@
               >
                 SEARCH
               </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
-            <div class="listing">
-              <a href="profile.html">
-                <div class="col-12 d-flex author fs-4 fw-bold">
-                  <img
-                    class="rounded-circle m-1 hover-zoom"
-                    src="images/messi-profile.jpg"
-                    alt="Profile pic"
-                  />
-                  <span class="align-items-center">Haris13</span>
-                </div>
-              </a>
-              <a href="listing.html">
-                <img
-                  class="listing-img mb-3 mt-2"
-                  src="images/sega.jpg"
-                  alt="Image of SEGA"
-                />
-                <div class="col-12 d-flex flex-wrap justify-content-between">
-                  <div>
-                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
-                  </div>
-                  <div class="d-flex">
-                    <span class="highlighted mt-1 me-1">now:</span>
-                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
-            <div class="listing">
-              <a href="profile.html">
-                <div class="col-12 d-flex author fs-4 fw-bold">
-                  <img
-                    class="rounded-circle m-1 hover-zoom"
-                    src="images/messi-profile.jpg"
-                    alt="Profile pic"
-                  />
-                  <span class="align-items-center">Haris13</span>
-                </div>
-              </a>
-              <a href="listing.html">
-                <img
-                  class="listing-img mb-3 mt-2"
-                  src="images/sega.jpg"
-                  alt="Image of SEGA"
-                />
-                <div class="col-12 d-flex flex-wrap justify-content-between">
-                  <div>
-                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
-                  </div>
-                  <div class="d-flex">
-                    <span class="highlighted mt-1 me-1">now:</span>
-                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
-            <div class="listing">
-              <a href="profile.html">
-                <div class="col-12 d-flex author fs-4 fw-bold">
-                  <img
-                    class="rounded-circle m-1 hover-zoom"
-                    src="images/messi-profile.jpg"
-                    alt="Profile pic"
-                  />
-                  <span class="align-items-center">Haris13</span>
-                </div>
-              </a>
-              <a href="listing.html">
-                <img
-                  class="listing-img mb-3 mt-2"
-                  src="images/sega.jpg"
-                  alt="Image of SEGA"
-                />
-                <div class="col-12 d-flex flex-wrap justify-content-between">
-                  <div>
-                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
-                  </div>
-                  <div class="d-flex">
-                    <span class="highlighted mt-1 me-1">now:</span>
-                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
-            <div class="listing">
-              <a href="profile.html">
-                <div class="col-12 d-flex author fs-4 fw-bold">
-                  <img
-                    class="rounded-circle m-1 hover-zoom"
-                    src="images/messi-profile.jpg"
-                    alt="Profile pic"
-                  />
-                  <span class="align-items-center">Haris13</span>
-                </div>
-              </a>
-              <a href="listing.html">
-                <img
-                  class="listing-img mb-3 mt-2"
-                  src="images/sega.jpg"
-                  alt="Image of SEGA"
-                />
-                <div class="col-12 d-flex flex-wrap justify-content-between">
-                  <div>
-                    <p class="fs-4 fw-bold me-2">SEGA Dreamcast</p>
-                  </div>
-                  <div class="d-flex">
-                    <span class="highlighted mt-1 me-1">now:</span>
-                    <p class="fs-4"><span class="fw-bold">313</span> &copy</p>
-                  </div>
-                </div>
-              </a>
             </div>
           </div>
         </div>
@@ -270,5 +151,6 @@
       </div>
     </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/js/index.mjs" type="module"></script>
   </body>
 </html>
