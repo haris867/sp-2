@@ -1,5 +1,29 @@
+import { checkProfileImage } from "./listings.mjs";
+import * as storage from "../storage/index.mjs";
+
 export function renderListing(listing, container) {
   console.log(listing);
+
+  function placeBid() {
+    const profile = storage.load("profile");
+    const name = profile.name;
+    if (listing.seller.name === name) {
+      return "";
+    } else {
+      return `<div class="btn-container d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mb-4 place-bid-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#place-bid"
+                  aria-expanded="false"
+                  aria-controls="place-bid"
+                >
+                  PLACE BID
+                </button>
+              </div>`;
+    }
+  }
   function findHighestBid() {
     const bidData = listing.bids[0];
     if (!bidData) {
@@ -35,6 +59,7 @@ export function renderListing(listing, container) {
 
   function displayBids() {
     const bidsArray = listing.bids.reverse();
+    console.log(bidsArray);
     for (let i = 0; i < bidsArray.length; i++) {
       bids += `<div class="bid mb-4">
                   <div
@@ -42,7 +67,7 @@ export function renderListing(listing, container) {
                   >
                     <div class="d-flex">
                       <div
-                        class="text-center rounded-circle m-1 mb-2 me-2 bids-icon fs-5"
+                        class="text-center rounded-circle m-1 mb-2 me-2 bids-icon fs-4"
                       />${bidsArray.length - i}</div>
                       <span class="align-self-center">${
                         bidsArray[i].bidderName
@@ -60,10 +85,43 @@ export function renderListing(listing, container) {
                 </div>`;
     }
   }
-  displayBids();
-  imageSlider();
+  var listingDescription = "";
+  function displayDescription() {
+    if (listing.description) {
+      listingDescription = `<div class="col-12 my-5">
+                <p class="fs-4 fw-bold">Description</p>
+                <p class="fs-5">
+                  ${listing.description}
+                </p>
+              </div>`;
+    } else {
+      listingDescription = "";
+    }
+  }
+  var image = listing.media[0];
+  function checkListingImages(img) {
+    if (!img || img === "") {
+      return "https://user-images.githubusercontent.com/73777398/206862719-84cd2485-da46-475c-aa82-adc8036f28e4.png";
+    } else {
+      return img;
+    }
+  }
 
+  const listingImg = checkListingImages(image);
+
+  displayDescription();
+  displayBids();
+  const bidsContent = () => {
+    if (bids === "") {
+      return `<div class="highlighted fs-4">No bids yet</div>`;
+    } else {
+      return bids;
+    }
+  };
+  imageSlider();
+  const profileImage = checkProfileImage(listing.seller.avatar);
   const highestBid = findHighestBid();
+
   container.innerHTML = `
           <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-9 col-lg-9 col-xl-8">
@@ -72,23 +130,25 @@ export function renderListing(listing, container) {
           <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
             <div class="listing">
             <div class="d-flex justify-content-between">
-              <a href="profile.html">
+              <a href="profile.html?name=${listing.seller.name}">
                 <div class="col-12 d-flex author fs-4 fw-bold">
                   <img
                     class="rounded-circle m-1 hover-zoom"
-                    src="${listing.seller.avatar}"
+                    src="${profileImage}"
                     alt="Profile pic"
                   />
                   <span class="align-items-center">${listing.seller.name}</span>
                 </div>
               </a>
-              <div class="text-center rounded-circle m-1 mb-2 me-2 bids-icon fs-5"/>${listing._count.bids}
+              <div class="text-center rounded-circle bids-icon position-relative"/><span class="fs-3">${
+                listing._count.bids
+              }</span>
               </div>
               </div>
               <img
                 class="listing-img mb-3 mt-2"
-                src="${listing.media[0]}"
-                alt="Image of SEGA"
+                src="${listingImg}"
+                alt="Image of ${listing.title}"
               />
               <div class="col-12 d-flex flex-wrap justify-content-between">
                 <div>
@@ -102,47 +162,25 @@ export function renderListing(listing, container) {
               <div class="row slides mb-4">
                 ${images}
               </div>
-              <div class="col-12 d-flex justify-content-between">
+              <div class="col-12 d-flex justify-content-between mb-4">
                 <div>
-                  <p class="fs-5 highlighted fw-bold">Ends in:</p>
+                  <p class="fs-4 highlighted fw-bold">Ends in:</p>
                 </div>
                 <div class="d-flex fs-5">
                 ${endsAt}
                 </div>
               </div>
-              <div class="btn-container d-flex justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-outline-primary mb-4"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#place-bid"
-                  aria-expanded="false"
-                  aria-controls="place-bid"
-                >
-                  PLACE BID
-                </button>
-              </div>
-              <div class="btn-container d-flex justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-outline-secondary mb-4"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#view-bids"
-                  aria-expanded="false"
-                  aria-controls="view-bids"
-                >
-                  VIEW BIDS
-                </button>
-              </div>
-              <div class="collapse" id="place-bid">
-                <div class="modal-content rounded-4 shadow">
+              ${placeBid()}
+                <div class="collapse" id="place-bid">
+                <div class="modal-content rounded-4 shadow-lg mb-5">
                   <div class="modal-header p-5 pb-4 border-bottom-0">
                     <h1 class="fw-bold mb-0 fs-2">Place your bid</h1>
                   </div>
                   <div class="modal-body mb-6 p-5 pt-0 d-flex">
-                    <form class="d-flex mx-auto">
+                    <form id="bidForm" class="d-flex mx-auto">
                       <div class="form-floating mb-3 d-flex">
                         <input
+                          name="amount"
                           type="text"
                           class="form-control rounded-3"
                           id="floatingInput"
@@ -160,17 +198,25 @@ export function renderListing(listing, container) {
                   </div>
                 </div>
               </div>
+              <div class="btn-container d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary mb-4"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#view-bids"
+                  aria-expanded="false"
+                  aria-controls="view-bids"
+                >
+                  VIEW BIDS
+                </button>
+              </div>
+
 
               <div class="bids col-12 mb-5 mt-3 collapse" id="view-bids">
                 <p class="fs-4 fw-bold">Bids</p>
-                ${bids}
+                ${bidsContent()}
               </div>
-              <div class="col-12 my-5">
-                <p class="fs-4 fw-bold">Description</p>
-                <p class="fs-5">
-                  ${listing.description}
-                </p>
-              </div>
+              ${listingDescription}
             </div>
           </div>
         </div>`;

@@ -30,6 +30,24 @@
       </a>
       <div class="d-flex position-absolute hamburger">
         <nav class="position-relative navbar navbar-dark" aria-label="navbar">
+          <a href="listings.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="currentColor"
+              class="bi bi-list-stars position-relative listings-icon"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"
+              />
+              <path
+                d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"
+              />
+            </svg>
+          </a>
           <div class="container-fluid">
             <button
               class="navbar-toggler position-absolute hamburger hamburger-icon"
@@ -45,12 +63,13 @@
                 width="40"
                 height="40"
                 fill="currentColor"
-                class="bi bi-list align-self-center"
+                class="bi bi-person-circle"
                 viewBox="0 0 16 16"
               >
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path
                   fill-rule="evenodd"
-                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                 />
               </svg>
             </button>
@@ -61,18 +80,23 @@
             >
               <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="index.html"
-                    >Home</a
+                  <a class="nav-link profile-link" href="profile.html"
+                    >Profile</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="listings.html">Listings</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">Profile</a>
+                  <div class="btn-container d-flex justify-content-center">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary my-2 log-out-button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#place-bid"
+                      aria-expanded="false"
+                      aria-controls="place-bid"
+                    >
+                      Log out
+                    </button>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -84,7 +108,7 @@
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-9 col-lg-9 col-xl-8">
-            <div class="modal-content rounded-4 shadow col-6">
+            <div class="modal-content rounded-4 shadow-lg col-6">
               <div class="modal-header p-5 pb-4 border-bottom-0">
                 <h1 class="fw-bold mb-0 fs-2">Register</h1>
               </div>

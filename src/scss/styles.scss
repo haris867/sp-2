@@ -24,6 +24,7 @@ header {
   &-icon {
     color: map-get($colours, tertiary) !important;
     border: map-get($colours, tertiary) !important;
+    box-shadow: none !important;
   }
   &-menu {
     top: 80px;
@@ -33,6 +34,21 @@ header {
     padding: 10px;
     background-color: map-get($colours, primary) !important;
   }
+}
+
+.log-button {
+  width: 100px !important;
+}
+
+.listings-icon {
+  top: 16px;
+  right: 49px;
+  color: map-get($colours, tertiary);
+}
+
+.listings-icon:hover {
+  text-decoration: none;
+  color: map-get($colours, tertiary);
 }
 
 .search-icon {
@@ -110,9 +126,10 @@ nav {
 }
 
 .bids-icon {
-  top: 10px;
-  width: 2rem;
-  height: 2rem;
+  top: 27px;
+  left: 17px;
+  width: 2.3rem;
+  height: 2.3rem;
   color: map-get($colours, primary);
   background-color: map-get($colours, secondary);
 }
