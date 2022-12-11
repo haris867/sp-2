@@ -1,5 +1,5 @@
 import { getProfile } from "../api/listings/read.mjs";
-import { renderProfile } from "../templates/profileListings.mjs";
+import { renderProfile } from "../templates/profile.mjs";
 
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);

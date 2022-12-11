@@ -43,7 +43,7 @@ export function renderListings(listings, container) {
                 <span class="align-items-center">${listings[i].seller.name}</span>
                 </div>
             </a>
-            <div class="text-center rounded-circle bids-icon position-relative"/><span class="fs-3">${listings[i]._count.bids}</span>
+            <div class="text-center rounded-circle bids-icon position-relative"/><span class="fs-3 fw-bold">${listings[i]._count.bids}</span>
               </div>
           </div>
 

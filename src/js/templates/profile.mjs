@@ -5,8 +5,6 @@ export function renderProfile(
   listingsContainer
 ) {
   const sortedListings = listings.sort(function (a, b) {
-    // Turn your strings into dates, and then subtract them
-    // to get a value that is either negative, positive, or zero.
     return new Date(b.created) - new Date(a.created);
   });
   console.log(sortedListings);

@@ -33,6 +33,7 @@ header {
     border-radius: 10px;
     padding: 10px;
     background-color: map-get($colours, primary) !important;
+    z-index: 1000;
   }
 }
 
@@ -77,6 +78,14 @@ nav {
 .listing a {
   text-decoration: none;
   color: map-get($colours, tertiary);
+}
+
+.login-link {
+  color: map-get($colours, secondary) !important;
+}
+
+.login-link:hover {
+  font-weight: bolder;
 }
 
 .listing a:hover {

@@ -3,8 +3,6 @@ var name = "";
 const profile = storage.load("profile");
 const token = storage.load("token");
 
-console.log(profile);
-
 export function createProfileNav(container) {
   if (token) {
     container.innerHTML = `<ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -18,10 +16,6 @@ export function createProfileNav(container) {
                     <button
                       type="button"
                       class="btn btn-outline-primary my-2 log-button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#place-bid"
-                      aria-expanded="false"
-                      aria-controls="place-bid"
                     >
                       Log out
                     </button>

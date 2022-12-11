@@ -1,8 +1,9 @@
 import { createBid } from "../api/listings/create.mjs";
-
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
 const id = parameters.get("id");
+import * as storage from "../storage/index.mjs";
+const token = storage.load("token");
 
 export function bidFormListener() {
   const form = document.querySelector("#bidForm");

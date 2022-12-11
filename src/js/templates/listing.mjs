@@ -2,14 +2,13 @@ import { checkProfileImage } from "./listings.mjs";
 import * as storage from "../storage/index.mjs";
 
 export function renderListing(listing, container) {
-  console.log(listing);
+  const profile = storage.load("profile");
+  console.log(profile);
 
   function placeBid() {
-    const profile = storage.load("profile");
-    const name = profile.name;
-    if (listing.seller.name === name) {
+    if (profile && profile.name === listing.seller.name) {
       return "";
-    } else {
+    } else if (profile && profile.name !== listing.seller.name) {
       return `<div class="btn-container d-flex justify-content-center">
                 <button
                   type="button"
@@ -21,9 +20,56 @@ export function renderListing(listing, container) {
                 >
                   PLACE BID
                 </button>
+              </div>
+              <div class="collapse" id="place-bid">
+                <div class="modal-content rounded-4 shadow-lg mb-5">
+                  <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h1 class="fw-bold mb-0 fs-2">Place your bid</h1>
+                    </div>
+                  <div class="modal-body mb-6 p-5 pt-0 d-flex">
+                    <form id="bidForm" class="d-flex mx-auto">
+                      <div class="form-floating mb-3 d-flex">
+                        <input
+                          name="amount"
+                          type="text"
+                          class="form-control rounded-3"
+                          id="floatingInput"
+                          placeholder="Amount"
+                        />
+                        <label for="floatingInput">Amount</label>
+                        <button
+                          class="py-2 ms-2 btn btn-outline-primary rounded-3"
+                          type="submit"
+                        >
+                          BID
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>`;
+    } else if (!profile) {
+      return `<div class="btn-container d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mb-4 place-bid-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#place-bid"
+                  aria-expanded="false"
+                  aria-controls="place-bid"
+                >
+                  PLACE BID
+                </button>
+              </div>
+              <div class="collapse" id="place-bid">
+                <div class="modal-content rounded-4 shadow-lg mb-5">
+                    <a href="login.html"
+                    class="w-100 py-2 mb-2 d-flex justify-content-center highlighted login-link">Log in to bid</a>
+                </div>
               </div>`;
     }
   }
+
   function findHighestBid() {
     const bidData = listing.bids[0];
     if (!bidData) {
@@ -171,33 +217,6 @@ export function renderListing(listing, container) {
                 </div>
               </div>
               ${placeBid()}
-                <div class="collapse" id="place-bid">
-                <div class="modal-content rounded-4 shadow-lg mb-5">
-                  <div class="modal-header p-5 pb-4 border-bottom-0">
-                    <h1 class="fw-bold mb-0 fs-2">Place your bid</h1>
-                  </div>
-                  <div class="modal-body mb-6 p-5 pt-0 d-flex">
-                    <form id="bidForm" class="d-flex mx-auto">
-                      <div class="form-floating mb-3 d-flex">
-                        <input
-                          name="amount"
-                          type="text"
-                          class="form-control rounded-3"
-                          id="floatingInput"
-                          placeholder="Amount"
-                        />
-                        <label for="floatingInput">Amount</label>
-                        <button
-                          class="py-2 ms-2 btn btn-outline-primary rounded-3"
-                          type="submit"
-                        >
-                          BID
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
               <div class="btn-container d-flex justify-content-center">
                 <button
                   type="button"
@@ -210,8 +229,6 @@ export function renderListing(listing, container) {
                   VIEW BIDS
                 </button>
               </div>
-
-
               <div class="bids col-12 mb-5 mt-3 collapse" id="view-bids">
                 <p class="fs-4 fw-bold">Bids</p>
                 ${bidsContent()}
