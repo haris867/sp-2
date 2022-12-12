@@ -1,7 +1,12 @@
 import { createListing } from "../api/listings/create.mjs";
+import { addtoList } from "../handlers/formArrays.mjs";
 
 export function createFormListener() {
   const form = document.querySelector("#createForm");
+  const addInputIcon = document.querySelector(".add-icon");
+
+  addInputIcon.addEventListener("click", addtoList);
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const form = e.target;

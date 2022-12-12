@@ -120,6 +120,7 @@
               <div class="modal-header p-5 pb-4 border-bottom-0">
                 <h1 class="fw-bold mb-0 fs-2">Create listing</h1>
               </div>
+
               <div class="modal-body mb-6 p-5 pt-0 d-flex">
                 <form class="mx-auto" id="createForm">
                   <div class="form-floating mb-3 d-flex">
@@ -141,17 +142,64 @@
                       id="floatingInput"
                       placeholder="Tags"
                     />
-                    <label for="floatingInput">Tags</label>
+                    <label for="floatingInput">Tag</label>
+                  </div>
+                  <div
+                    id="addInputIcon"
+                    class="add-input-icon d-flex mt-4 modal-body"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      class="bi bi-plus-circle fw-bold mb-3 add-icon"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                    <div class="highlighted mx-2 fs-5">
+                      <p>Add tag</p>
+                    </div>
                   </div>
                   <div class="form-floating mb-3 d-flex">
                     <input
                       name="image-url"
                       type="url"
-                      class="form-control rounded-3"
+                      class="form-control rounded-3 image-input"
                       id="floatingInput"
                       placeholder="Images"
                     />
-                    <label for="floatingInput">Images</label>
+                    <label for="floatingInput">Image</label>
+                  </div>
+                  <div class="image-input-container"></div>
+                  <div
+                    id="addInputIcon"
+                    class="add-input-icon d-flex mt-4 modal-body"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      class="bi bi-plus-circle fw-bold mb-3 add-icon"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                      />
+                      <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                      />
+                    </svg>
+                    <div class="highlighted mx-2 fs-5">
+                      <p>Add image</p>
+                    </div>
                   </div>
                   <div class="form-floating mb-3 d-flex">
                     <input
@@ -211,5 +259,6 @@
     </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/js/index.mjs" type="module"></script>
+    <script src="src/js/handlers/formArrays.mjs" type="module"></script>
   </body>
 </html>

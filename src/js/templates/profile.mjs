@@ -40,10 +40,8 @@ export function renderProfile(
     listingsContainer.innerHTML += `
     <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
          <div class="listing">
-            
          <div class="d-flex justify-content-end">
           </div>
-
             <a href="listing.html?id=${listings[i].id}">
                 <img
                 class="listing-img mb-3 mt-2"

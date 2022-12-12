@@ -1,6 +1,5 @@
 import { registerFormListener } from "./handlers/register.mjs";
 import { loginFormListener } from "./handlers/login.mjs";
-import { getListings } from "./api/listings/read.mjs";
 import { displayListings } from "./handlers/listings.mjs";
 import { displayListing } from "./handlers/listing.mjs";
 import { createFormListener } from "./handlers/createListing.mjs";

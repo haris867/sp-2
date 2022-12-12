@@ -183,7 +183,9 @@ export function renderListing(listing, container) {
                     src="${profileImage}"
                     alt="Profile pic"
                   />
-                  <span class="align-items-center">${listing.seller.name}</span>
+                  <span class="author-name align-items-center">${
+                    listing.seller.name
+                  }</span>
                 </div>
               </a>
               <div class="text-center rounded-circle bids-icon position-relative"/><span class="fs-3">${
