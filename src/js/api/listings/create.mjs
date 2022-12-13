@@ -6,8 +6,10 @@ export async function createListing(listingData) {
     method: "post",
     body: JSON.stringify(listingData),
   });
-  location.reload();
-  return await response.json();
+
+  const result = await response.json();
+  console.log(result);
+  return result;
 }
 
 export async function createBid(bid, id) {
@@ -16,6 +18,9 @@ export async function createBid(bid, id) {
     method: "post",
     body: JSON.stringify(bid),
   });
-  location.reload();
-  return await response.json();
+  // location.reload();
+
+  const result = await response.json();
+  console.log(result);
+  return result;
 }

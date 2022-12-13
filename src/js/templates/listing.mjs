@@ -3,7 +3,7 @@ import * as storage from "../storage/index.mjs";
 
 export function renderListing(listing, container) {
   const profile = storage.load("profile");
-  console.log(profile);
+  console.log(listing);
 
   function placeBid() {
     if (profile && profile.name === listing.seller.name) {
@@ -86,7 +86,7 @@ export function renderListing(listing, container) {
 
     const imageArray = listing.media;
     imageArray.forEach((image) => {
-      images += `<div class="col-3">
+      images += `<div class="col-3 mb-2">
                   <img
                     class="listing-img"
                     src="${image}"
@@ -145,6 +145,8 @@ export function renderListing(listing, container) {
     }
   }
   var image = listing.media[0];
+  console.log(image);
+
   function checkListingImages(img) {
     if (!img || img === "") {
       return "https://user-images.githubusercontent.com/73777398/206862719-84cd2485-da46-475c-aa82-adc8036f28e4.png";
@@ -188,13 +190,13 @@ export function renderListing(listing, container) {
                   }</span>
                 </div>
               </a>
-              <div class="text-center rounded-circle bids-icon position-relative"/><span class="fs-3">${
+              <div class="d-flex justify-content-center align-items-center rounded-circle bids-icon position-relative"/><span class="fs-3">${
                 listing._count.bids
               }</span>
               </div>
               </div>
               <img
-                class="listing-img mb-3 mt-2"
+                class="listing-img mb-3 mt-2 thumbnail"
                 src="${listingImg}"
                 alt="Image of ${listing.title}"
               />
@@ -239,4 +241,15 @@ export function renderListing(listing, container) {
             </div>
           </div>
         </div>`;
+
+  const listingPicture = document.querySelectorAll(".listing-img");
+  console.log(listingPicture);
+  listingPicture.forEach((img) => {
+    img.addEventListener("click", selectImage);
+  });
+  function selectImage() {
+    console.log(this.src);
+    const thumbnail = document.querySelector(".thumbnail");
+    thumbnail.src = this.src;
+  }
 }
