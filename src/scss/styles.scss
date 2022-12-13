@@ -138,6 +138,14 @@ nav {
   height: 30px;
 }
 
+.tag-icon {
+  color: map-get($colours, primary);
+  background-color: map-get($colours, secondary);
+  display: inline-block;
+  padding: 10px;
+  border-radius: 30%;
+}
+
 .bids-icon {
   top: 27px;
   left: 17px;

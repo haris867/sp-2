@@ -98,14 +98,16 @@ export function renderListing(listing, container) {
   var bids = "";
 
   const date = listing.endsAt;
-  console.log(date);
 
   const time = new Date(date);
   const endsAt = time.toLocaleString();
 
   function displayBids() {
-    const bidsArray = listing.bids.reverse();
-    console.log(bidsArray);
+    var bidsArray = listing.bids;
+    const sortedListings = bidsArray.sort(function (a, b) {
+      return b.amount - a.amount;
+    });
+
     for (let i = 0; i < bidsArray.length; i++) {
       bids += `<div class="bid mb-4">
                   <div
@@ -132,7 +134,15 @@ export function renderListing(listing, container) {
     }
   }
   var listingDescription = "";
+  var tags = "";
   function displayDescription() {
+    if (listing.tags) {
+      var tags = `<p class="fs-4 fw-bold">Tags</p>`;
+      listing.tags.forEach((tag) => {
+        tags += `<p class="fs-5 tag-icon mx-2">${tag}</p>`;
+      });
+    }
+
     if (listing.description) {
       listingDescription = `<div class="col-12 my-5">
                 <p class="fs-4 fw-bold">Description</p>
@@ -140,8 +150,6 @@ export function renderListing(listing, container) {
                   ${listing.description}
                 </p>
               </div>`;
-    } else {
-      listingDescription = "";
     }
   }
   var image = listing.media[0];
@@ -236,6 +244,9 @@ export function renderListing(listing, container) {
               <div class="bids col-12 mb-5 mt-3 collapse" id="view-bids">
                 <p class="fs-4 fw-bold">Bids</p>
                 ${bidsContent()}
+              </div>
+              <div class="col-12 my-5">
+                  ${tags}
               </div>
               ${listingDescription}
             </div>

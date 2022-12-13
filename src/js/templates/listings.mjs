@@ -33,7 +33,7 @@ export function renderListings(listings, container) {
          <div class="listing">
             
          <div class="d-flex justify-content-between">
-            <a href="profile.html/${listings[i].seller.name}">
+            <a href="profile.html?name=${listings[i].seller.name}">
                 <div class="col-12 d-flex author fs-4 fw-bold">
                 <img
                     class="rounded-circle m-1 hover-zoom"
