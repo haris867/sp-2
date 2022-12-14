@@ -7,7 +7,7 @@ export function renderProfile(
   const sortedListings = listings.sort(function (a, b) {
     return new Date(b.created) - new Date(a.created);
   });
-  console.log(sortedListings);
+  console.log(profile);
   for (let i = 0; i < sortedListings.length; i++) {
     function checkListingImages(image) {
       if (!image || image === "") {

@@ -5,6 +5,48 @@ export function renderListing(listing, container) {
   const profile = storage.load("profile");
   console.log(listing);
 
+  function deleteIconCheck() {
+    if (profile && profile.name === listing.seller.name) {
+      return `
+      <div class="d-flex justify-content-between">
+      <h1 class="heading fs-1">${listing.title}</h1>
+      <div class="delete-icon d-flex justify-content-center align-items-center mb-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3" 
+                  data-bs-toggle="collapse"
+                  data-bs-target="#delete-listing"
+                  aria-expanded="false"
+                  aria-controls="delete-listing"
+                  viewBox="0 0 16 16">
+            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+        </svg>
+        </div>
+        </div>
+        <div
+        <div class="collapse delete-listing" id="delete-listing">
+                <div class="modal-content rounded-4 shadow-lg mb-5">
+                  <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h1 class="fw-bold mb-0 fs-2">Are you sure?</h1>
+                    </div>
+                  <div class="modal-body mb-6 p-5 pt-0 d-flex">
+                        <button
+                          class="py-2 ms-2 btn btn-outline-primary rounded-3 delete-button"
+                          type="submit"
+                        >
+                          DELETE
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>`;
+    } else {
+      return `<div class="d-flex justify-content-between">
+      <h1 class="heading fs-1">${listing.title}</h1>
+        </div>`;
+    }
+  }
+
+  const deleteIcon = deleteIconCheck();
+
   function placeBid() {
     if (profile && profile.name === listing.seller.name) {
       return "";
@@ -181,8 +223,7 @@ export function renderListing(listing, container) {
   container.innerHTML = `
           <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-9 col-lg-9 col-xl-8">
-            <h1 class="heading fs-1">${listing.title}</h1>
-          </div>
+          ${deleteIcon}
           <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
             <div class="listing">
             <div class="d-flex justify-content-between">

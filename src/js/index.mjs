@@ -7,6 +7,7 @@ import { displayProfile } from "./handlers/profile.mjs";
 import { bidFormListener } from "./handlers/createBid.mjs";
 import { createProfileNav } from "./handlers/createNav.mjs";
 import { handleLogButton } from "./handlers/logout.mjs";
+import { deleteListener } from "./handlers/delete.mjs";
 
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 createProfileNav(hamburgerMenu);
@@ -22,6 +23,7 @@ if (path === "/login.html") {
   displayListings();
 } else if (path === "/listing.html") {
   displayListing();
+  deleteListener();
   bidFormListener();
 } else if (path === "/profile.html") {
   displayProfile();
