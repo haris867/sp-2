@@ -23,7 +23,7 @@ export function renderListing(listing, container) {
         </div>
         <div
         <div class="collapse delete-listing" id="delete-listing">
-                <div class="modal-content rounded-4 shadow-lg mb-5">
+                <div class="modal-content rounded-4 shadow-lg mb-5 d-flex align-items-center">
                   <div class="modal-header p-5 pb-4 border-bottom-0">
                     <h1 class="fw-bold mb-0 fs-2">Are you sure?</h1>
                     </div>

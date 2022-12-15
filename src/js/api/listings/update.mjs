@@ -1,8 +1,8 @@
 import { authFetch } from "../authFetch.mjs";
 
-export async function updateListing(listingData) {
+export async function updateListing(listingData, id) {
   const updateListingUrl =
-    `https://api.noroff.dev/api/v1/auction/listings/` + listingData.id;
+    `https://api.noroff.dev/api/v1/auction/listings/` + id;
   const response = await authFetch(updateListingUrl, {
     method: "put",
     body: JSON.stringify(listingData),

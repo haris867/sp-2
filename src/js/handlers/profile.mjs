@@ -12,6 +12,8 @@ const profileListingsContainer = document.querySelector(
   ".profile-listings-container"
 );
 
+console.log(listingsArray);
+
 export function displayProfile() {
   renderProfile(
     profile,

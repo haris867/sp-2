@@ -12,6 +12,8 @@ import { removeCreateForm } from "./templates/hideCreateForm.mjs";
 import { displaySearchedListings } from "./handlers/displaySearchResults.mjs";
 import { updateAvatarListener } from "./handlers/updateAvatar.mjs";
 import { removeUpdateAvatarForm } from "./templates/hideUpdateAvatar.mjs";
+import { updateListingListener } from "./handlers/updateListing.mjs";
+import { removeUpdateListingForm } from "./templates/hideUpdateListing.mjs";
 
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 createProfileNav(hamburgerMenu);
@@ -30,6 +32,8 @@ if (path === "/login.html") {
   displayListing();
   // bidFormListener();
   deleteListener();
+
+  // updateListingListener();
 } else if (path === "/profile.html") {
   displayProfile();
   updateAvatarListener();

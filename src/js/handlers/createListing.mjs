@@ -15,9 +15,10 @@ export function createFormListener() {
     const formData = new FormData(form);
     const deadline = formData.get("deadline");
 
-    const time = new Date(deadline);
+    // DONT NEED FORMDATA OBJECT HERE because line 22
 
-    const [title, description, endsAt] = form.elements;
+    const time = new Date(deadline);
+    const title = form.title;
 
     var tags = [];
     const tagInputs = document.querySelectorAll(`input[name="tags"]`);
@@ -47,5 +48,8 @@ export function createFormListener() {
 
     createListing(listing);
     form.reset();
+    setTimeout(() => {
+      location.reload();
+    }, "2000");
   });
 }

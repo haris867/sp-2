@@ -138,6 +138,13 @@ nav {
   height: 30px;
 }
 
+.placeholder {
+  &-profile {
+    min-width: 150px;
+    height: 1.5rem;
+  }
+}
+
 .tag-icon {
   color: map-get($colours, primary);
   background-color: map-get($colours, secondary);
@@ -237,4 +244,19 @@ footer {
 
 footer ul {
   list-style: none;
+}
+
+.appear-animation {
+  animation: appear-ani 3s 1s forwards ease-in;
+}
+
+@keyframes appear-ani {
+  0% {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  100% {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 }

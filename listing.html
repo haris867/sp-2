@@ -84,6 +84,139 @@
     </header>
     <main class="m-4">
       <div class="listing-container container"></div>
+      <div class="edit-container">
+        <div class="btn-container d-flex justify-content-center">
+          <button
+            id="updateListingButton"
+            type="button"
+            class="btn btn-outline-secondary mb-4 d-none"
+            data-bs-toggle="collapse"
+            data-bs-target="#updateForm"
+            aria-expanded="false"
+            aria-controls="updateForm"
+          >
+            EDIT
+          </button>
+        </div>
+        <div
+          class="collapse col-12 col-md-9 col-lg-8 col-xl-7 mx-auto mt-4"
+          id="updateForm"
+        >
+          <div class="modal-content rounded-4 shadow-lg">
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+              <h1 class="fw-bold mb-0 fs-2">Update listing</h1>
+            </div>
+
+            <div class="modal-body mb-6 p-5 pt-0 d-flex">
+              <form class="mx-auto" id="updateForm">
+                <div class="form-floating mb-3 d-flex">
+                  <input
+                    name="title"
+                    type="text"
+                    maxlength="280"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="Title"
+                  />
+                  <label for="floatingInput">Title*</label>
+                </div>
+                <div class="form-floating mb-3 d-flex">
+                  <input
+                    name="tags"
+                    type="text"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="Tags"
+                  />
+                  <label for="floatingInput">Tag</label>
+                </div>
+                <div class="tag-input-container"></div>
+
+                <div
+                  id="addInputIcon"
+                  class="add-tag-icon add-tag-icon-update d-flex mt-4 modal-body"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
+                    class="bi bi-plus-circle fw-bold mb-3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                    />
+                  </svg>
+                  <div class="highlighted mx-2 fs-5">
+                    <p>Add tag</p>
+                  </div>
+                </div>
+                <div class="form-floating mb-3 d-flex">
+                  <input
+                    name="image-url"
+                    type="url"
+                    class="form-control rounded-3"
+                    id="floatingInput"
+                    placeholder="Images"
+                  />
+                  <label for="floatingInput">Image URL</label>
+                </div>
+                <div class="image-input-container"></div>
+                <div
+                  id="addInputIcon"
+                  class="add-image-icon add-image-icon-update d-flex mt-4 modal-body"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    fill="currentColor"
+                    class="bi bi-plus-circle fw-bold mb-3"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                    />
+                  </svg>
+                  <div class="highlighted mx-2 fs-5">
+                    <p>Add image</p>
+                  </div>
+                </div>
+                <div class="form-floating mb-3 d-flex">
+                  <textarea
+                    name="description"
+                    id="description"
+                    type="text"
+                    maxlength="280"
+                    class="form-control rounded-3 description-input"
+                    placeholder="Description"
+                    resize="true"
+                  ></textarea>
+                  <label for="description">Description</label>
+                </div>
+                <div class="btn-container d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    class="btn btn-outline-primary mb-4"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-controls="place-bid"
+                  >
+                    UPDATE
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="d-flex justify-content-between mx-3">
       <div class="footer-logo-container align-self-center ms-3 mb-2">
