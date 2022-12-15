@@ -6,6 +6,8 @@ import * as storage from "../storage/index.mjs";
 const token = storage.load("token");
 
 export function bidFormListener() {
+  const profile = storage.load("profile");
+  console.log(profile);
   const form = document.querySelector("#bidForm");
   form.addEventListener("submit", (e) => {
     e.preventDefault();

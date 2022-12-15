@@ -29,7 +29,7 @@ export function renderListings(listings, container) {
     const profileImage = checkProfileImage(listings[i].seller.avatar);
     const highestBid = findHighestBid();
     container.innerHTML += `
-    <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
+    <div class="listing-container col-12 col-md-9 col-lg-8 col-xl-7 my-4">
          <div class="listing">
             
          <div class="d-flex justify-content-between">

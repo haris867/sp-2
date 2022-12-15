@@ -8,6 +8,10 @@ import { bidFormListener } from "./handlers/createBid.mjs";
 import { createProfileNav } from "./handlers/createNav.mjs";
 import { handleLogButton } from "./handlers/logout.mjs";
 import { deleteListener } from "./handlers/delete.mjs";
+import { removeCreateForm } from "./templates/hideCreateForm.mjs";
+import { displaySearchedListings } from "./handlers/displaySearchResults.mjs";
+import { updateAvatarListener } from "./handlers/updateAvatar.mjs";
+import { removeUpdateAvatarForm } from "./templates/hideUpdateAvatar.mjs";
 
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 createProfileNav(hamburgerMenu);
@@ -21,11 +25,15 @@ if (path === "/login.html") {
   registerFormListener();
 } else if (path === "/listings.html") {
   displayListings();
+  displaySearchedListings();
 } else if (path === "/listing.html") {
   displayListing();
+  // bidFormListener();
   deleteListener();
-  bidFormListener();
 } else if (path === "/profile.html") {
   displayProfile();
+  updateAvatarListener();
+  removeUpdateAvatarForm();
   createFormListener();
+  removeCreateForm();
 }

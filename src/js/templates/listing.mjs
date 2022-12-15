@@ -51,18 +51,7 @@ export function renderListing(listing, container) {
     if (profile && profile.name === listing.seller.name) {
       return "";
     } else if (profile && profile.name !== listing.seller.name) {
-      return `<div class="btn-container d-flex justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-outline-primary mb-4 place-bid-button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#place-bid"
-                  aria-expanded="false"
-                  aria-controls="place-bid"
-                >
-                  PLACE BID
-                </button>
-              </div>
+      return `
               <div class="collapse" id="place-bid">
                 <div class="modal-content rounded-4 shadow-lg mb-5">
                   <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -178,10 +167,11 @@ export function renderListing(listing, container) {
   var listingDescription = "";
   var tags = "";
   function displayDescription() {
-    if (listing.tags) {
-      var tags = `<p class="fs-4 fw-bold">Tags</p>`;
-      listing.tags.forEach((tag) => {
-        tags += `<p class="fs-5 tag-icon mx-2">${tag}</p>`;
+    const listingTags = listing.tags;
+    if (listingTags) {
+      tags = `<p class="fs-4 fw-bold">Tags</p>`;
+      listingTags.forEach((tag) => {
+        tags += `<p class="fs-5 tag-icon mx-2">${tag.toUpperCase()}</p>`;
       });
     }
 
@@ -208,6 +198,7 @@ export function renderListing(listing, container) {
   const listingImg = checkListingImages(image);
 
   displayDescription();
+  console.log(tags);
   displayBids();
   const bidsContent = () => {
     if (bids === "") {
@@ -250,12 +241,12 @@ export function renderListing(listing, container) {
                 alt="Image of ${listing.title}"
               />
               <div class="col-12 d-flex flex-wrap justify-content-between">
-                <div>
+                <div class="d-flex align-items-center">
                   <p class="fs-4 fw-bold me-2">Highest bid:</p>
                 </div>
-                <div class="d-flex">
-                  <span class="highlighted mt-1 me-1">now:</span>
-                  <p><span class="fs-4 fw-bold">${highestBid}</span> credits</p>
+                <div class="d-flex align-items-center">
+                  <span class="highlighted mb-3 me-2">now:</span>
+                  <p><span class="fs-2 fw-bold">${highestBid}</span> &copy</p>
                 </div>
               </div>
               <div class="row slides mb-4">
@@ -288,9 +279,8 @@ export function renderListing(listing, container) {
               </div>
               <div class="col-12 my-5">
                   ${tags}
-              </div>
-              ${listingDescription}
             </div>
+            ${listingDescription}
           </div>
         </div>`;
 
