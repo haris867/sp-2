@@ -14,6 +14,6 @@ export function registerFormListener() {
     register(profile);
     form.reset();
     successMessage.style.display = "block";
-    window.location = "login.html";
+    // window.location = "login.html";
   });
 }

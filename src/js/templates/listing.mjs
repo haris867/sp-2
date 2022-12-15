@@ -51,7 +51,18 @@ export function renderListing(listing, container) {
     if (profile && profile.name === listing.seller.name) {
       return "";
     } else if (profile && profile.name !== listing.seller.name) {
-      return `
+      return `<div class="btn-container d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary mb-4 place-bid-button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#place-bid"
+                  aria-expanded="false"
+                  aria-controls="place-bid"
+                >
+                  PLACE BID
+                </button>
+              </div>
               <div class="collapse" id="place-bid">
                 <div class="modal-content rounded-4 shadow-lg mb-5">
                   <div class="modal-header p-5 pb-4 border-bottom-0">
@@ -100,6 +111,8 @@ export function renderListing(listing, container) {
               </div>`;
     }
   }
+
+  console.log(placeBid());
 
   function findHighestBid() {
     const bidData = listing.bids[0];
@@ -171,7 +184,9 @@ export function renderListing(listing, container) {
     if (listingTags) {
       tags = `<p class="fs-4 fw-bold">Tags</p>`;
       listingTags.forEach((tag) => {
-        tags += `<p class="fs-5 tag-icon mx-2">${tag.toUpperCase()}</p>`;
+        if (tag !== "") {
+          tags += `<p class="fs-5 tag-icon mx-2">${tag.toUpperCase()}</p>`;
+        }
       });
     }
 

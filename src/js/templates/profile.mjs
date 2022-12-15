@@ -7,7 +7,7 @@ export function renderProfile(
   var listingResult = "";
   function checkListings() {
     if (listings.length < 1) {
-      return `<div class="listing">
+      listingResult += `<div class="listing">
             <h4 class="highlighted">No listings yet</h4>
         </div>`;
     } else if (listings.length >= 1) {

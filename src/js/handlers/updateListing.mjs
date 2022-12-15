@@ -45,13 +45,13 @@ export function updateListingListener() {
     if (!title.value || images === "") {
       delete listing.title;
     }
-    if (!images || images === "") {
+    if (!images || images === "" || images.length < 1) {
       delete listing.media;
     }
     if (!description.value || description.value === "") {
       delete listing.description;
     }
-    if (!tags || tags === "") {
+    if (!tags || tags === "" || tags.length < 1) {
       delete listing.tags;
     }
 

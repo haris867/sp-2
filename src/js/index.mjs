@@ -30,10 +30,6 @@ if (path === "/login.html") {
   displaySearchedListings();
 } else if (path === "/listing.html") {
   displayListing();
-  // bidFormListener();
-  deleteListener();
-
-  // updateListingListener();
 } else if (path === "/profile.html") {
   displayProfile();
   updateAvatarListener();

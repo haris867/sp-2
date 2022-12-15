@@ -1,5 +1,6 @@
 import { getProfile } from "../api/listings/read.mjs";
 import { renderProfile } from "../templates/profile.mjs";
+import * as storage from "../storage/index.mjs";
 
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
@@ -15,6 +16,14 @@ const profileListingsContainer = document.querySelector(
 console.log(listingsArray);
 
 export function displayProfile() {
+  function checkCredentials() {
+    const checkToken = storage.load("token");
+    if (!checkToken) {
+      window.location = "login.html";
+    }
+  }
+
+  checkCredentials();
   renderProfile(
     profile,
     listingsArray,

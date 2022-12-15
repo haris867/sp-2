@@ -18,7 +18,7 @@ export async function createBid(bid, id) {
     method: "post",
     body: JSON.stringify(bid),
   });
-  // location.reload();
+  location.reload();
 
   const result = await response.json();
   console.log(result);

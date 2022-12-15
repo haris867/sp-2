@@ -6,22 +6,26 @@ import * as storage from "../storage/index.mjs";
 const token = storage.load("token");
 
 export function bidFormListener() {
-  const profile = storage.load("profile");
-  console.log(profile);
+  console.log(token);
   const form = document.querySelector("#bidForm");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
+  if (token) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
 
-    const bidAmount = form.amount.value;
-    const bid = {
-      amount: Number(bidAmount),
-    };
+      const bidAmount = form.amount.value;
+      const bid = {
+        amount: Number(bidAmount),
+      };
 
-    console.log(bid);
+      console.log(bid);
 
-    createBid(bid, id);
-    form.reset();
-  });
+      createBid(bid, id);
+      form.reset();
+      setTimeout(() => {
+        location.reload();
+      }, "2000");
+    });
+  }
 }
