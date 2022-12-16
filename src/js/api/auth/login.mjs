@@ -10,10 +10,21 @@ export async function login(profile) {
     method: "post",
     body: body,
   });
+  const result = await response.json();
+  const { accessToken, ...user } = result;
 
-  const { accessToken, ...user } = await response.json();
+  const formMessage = document.querySelector(".form-message");
 
-  storage.save("token", accessToken);
-  storage.save("profile", user);
-  location.href = "/listings.html";
+  console.log(result);
+
+  if (result.errors) {
+    formMessage.innerHTML = result.errors[0].message;
+    formMessage.style.display = "block";
+  } else {
+    formMessage.innerHTML = "Logging in...";
+    formMessage.style.display = "block";
+    storage.save("token", accessToken);
+    storage.save("profile", user);
+    location.href = "/listings.html";
+  }
 }

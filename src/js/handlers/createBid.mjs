@@ -23,9 +23,6 @@ export function bidFormListener() {
 
       createBid(bid, id);
       form.reset();
-      setTimeout(() => {
-        location.reload();
-      }, "2000");
     });
   }
 }

@@ -10,7 +10,7 @@ export function loginFormListener() {
     }
   }
 
-  checkCredentials();
+  // checkCredentials();
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();

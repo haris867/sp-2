@@ -17,5 +17,6 @@ export async function updateAvatar(name, avatar) {
     body: JSON.stringify(avatar),
   });
 
+  location.reload();
   return await response.json();
 }

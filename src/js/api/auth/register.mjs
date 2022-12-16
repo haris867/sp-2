@@ -12,4 +12,7 @@ export async function register(profile) {
 
   const result = await response.json();
   console.log(result);
+  formMessage.innerHTML = "Your account is registered!";
+  formMessage.style.display = "block";
+  // window.location = "login.html";
 }

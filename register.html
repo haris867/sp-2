@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header class="d-flex justify-content-between">
       <a href="index.html" class="align-self-center">
         <div class="logo-container">
@@ -92,9 +92,7 @@
               </div>
 
               <div class="modal-body p-5 pt-0">
-                <div class="success-message mb-3">
-                  <h2 class="fs-5">You're account is registered!</h2>
-                </div>
+                <div class="form-message mb-3 fs-5 highlighted"></div>
                 <form id="registerForm">
                   <div class="form-floating mb-3">
                     <input
@@ -166,6 +164,15 @@
         </div>
       </div>
     </main>
+    <footer class="d-flex justify-content-center mt-auto mx-4">
+      <div class="footer-logo-container align-self-center mb-2">
+        <a href="listings.html"
+          ><img
+            src="images/auction-logo-icon.png"
+            alt="Auction House logo icon"
+        /></a>
+      </div>
+    </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/js/index.mjs" type="module"></script>
   </body>

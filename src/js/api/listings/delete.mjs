@@ -7,5 +7,6 @@ export async function deleteListing(id) {
     method: "delete",
   });
 
+  location.href = "/listings.html";
   return await response.json();
 }

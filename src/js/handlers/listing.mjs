@@ -13,12 +13,11 @@ const id = parameters.get("id");
 const profile = storage.load("profile");
 console.log(profile);
 
-const listingData = await getListing(id);
-const listingContainer = document.querySelector(".listing-container");
-
 console.log(id);
 
-export function displayListing() {
+export async function displayListing() {
+  const listingData = await getListing(id);
+  const listingContainer = document.querySelector(".listing-container");
   renderListing(listingData, listingContainer);
   const authorName = document.querySelector(".author-name");
 

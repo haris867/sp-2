@@ -8,7 +8,7 @@ export function renderListing(listing, container) {
   function deleteIconCheck() {
     if (profile && profile.name === listing.seller.name) {
       return `
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between text-break">
       <h1 class="heading fs-1">${listing.title}</h1>
       <div class="delete-icon d-flex justify-content-center align-items-center mb-2">
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3" 
@@ -39,7 +39,7 @@ export function renderListing(listing, container) {
                 </div>
               </div>`;
     } else {
-      return `<div class="d-flex justify-content-between">
+      return `<div class="d-flex justify-content-between  text-break">
       <h1 class="heading fs-1">${listing.title}</h1>
         </div>`;
     }
@@ -68,7 +68,9 @@ export function renderListing(listing, container) {
                   <div class="modal-header p-5 pb-4 border-bottom-0">
                     <h1 class="fw-bold mb-0 fs-2">Place your bid</h1>
                     </div>
+                    <div class="form-message ms-5 mb-3 fs-5 highlighted"></div>
                   <div class="modal-body mb-6 p-5 pt-0 d-flex">
+                  
                     <form id="bidForm" class="d-flex mx-auto">
                       <div class="form-floating mb-3 d-flex">
                         <input
@@ -161,7 +163,7 @@ export function renderListing(listing, container) {
                       <div
                         class="text-center rounded-circle m-1 mb-2 me-2 bids-icon fs-4"
                       />${bidsArray.length - i}</div>
-                      <span class="align-self-center">${
+                      <span class="align-self-center text-break">${
                         bidsArray[i].bidderName
                       }</span>
                     </div>
@@ -181,7 +183,8 @@ export function renderListing(listing, container) {
   var tags = "";
   function displayDescription() {
     const listingTags = listing.tags;
-    if (listingTags) {
+
+    if (listingTags[0] !== "" && listingTags.length !== 0) {
       tags = `<p class="fs-4 fw-bold">Tags</p>`;
       listingTags.forEach((tag) => {
         if (tag !== "") {
@@ -189,6 +192,7 @@ export function renderListing(listing, container) {
         }
       });
     }
+    console.log(listingTags.length);
 
     if (listing.description) {
       listingDescription = `<div class="col-12 my-5">
@@ -230,7 +234,7 @@ export function renderListing(listing, container) {
           <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-9 col-lg-9 col-xl-8">
           ${deleteIcon}
-          <div class="col-12 col-md-9 col-lg-8 col-xl-7 my-4">
+          <div class="col-12 my-4">
             <div class="listing">
             <div class="d-flex justify-content-between">
               <a href="profile.html?name=${listing.seller.name}">

@@ -4,7 +4,7 @@ export function registerFormListener() {
   const form = document.querySelector("#registerForm");
 
   form.addEventListener("submit", (e) => {
-    const successMessage = document.querySelector(".success-message");
+    const formMessage = document.querySelector(".form-message");
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
@@ -13,7 +13,5 @@ export function registerFormListener() {
 
     register(profile);
     form.reset();
-    successMessage.style.display = "block";
-    // window.location = "login.html";
   });
 }

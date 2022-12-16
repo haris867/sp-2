@@ -6,10 +6,19 @@ export async function createListing(listingData) {
     method: "post",
     body: JSON.stringify(listingData),
   });
-
   const result = await response.json();
-  console.log(result);
-  return result;
+
+  const formMessage = document.querySelector(".form-message");
+
+  if (!result) {
+    formMessage.innerHTML = "Something went wrong.. Please try again.";
+    formMessage.style.display = "block";
+  } else {
+    formMessage.innerHTML = "Creating listing...";
+    formMessage.style.display = "block";
+    location.reload();
+    return result;
+  }
 }
 
 export async function createBid(bid, id) {
@@ -18,9 +27,19 @@ export async function createBid(bid, id) {
     method: "post",
     body: JSON.stringify(bid),
   });
-  location.reload();
 
   const result = await response.json();
   console.log(result);
-  return result;
+
+  const formMessage = document.querySelector(".form-message");
+
+  if (result.errors) {
+    formMessage.innerHTML = result.errors[0].message;
+    formMessage.style.display = "block";
+  } else {
+    formMessage.innerHTML = "Adding bid...";
+    formMessage.style.display = "block";
+    location.reload();
+    return result;
+  }
 }

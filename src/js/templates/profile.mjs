@@ -37,7 +37,7 @@ export function renderProfile(
                 alt="Image of ${listings[i].title}"
                 />
                 <div class="row d-flex flex-wrap justify-content-between">
-                <div class="col-8 text-wrap">
+                <div class="col-12 text-break">
                     <p class="fs-4 fw-bold me-2">${listings[i].title}</p>
                 </div>
                 </div>

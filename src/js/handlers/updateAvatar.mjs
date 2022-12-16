@@ -16,6 +16,6 @@ export function updateAvatarListener() {
     };
     console.log(updateAvatarImage);
     updateAvatar(name, updateAvatarImage);
-    location.reload();
+    // location.reload();
   });
 }

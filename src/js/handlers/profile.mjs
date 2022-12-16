@@ -6,16 +6,13 @@ const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
 const name = parameters.get("name");
 
-const profile = await getProfile(name);
-const listingsArray = profile.listings;
-const profileContainer = document.querySelector(".profile-container");
-const profileListingsContainer = document.querySelector(
-  ".profile-listings-container"
-);
-
-console.log(listingsArray);
-
-export function displayProfile() {
+export async function displayProfile() {
+  const profile = await getProfile(name);
+  const listingsArray = profile.listings;
+  const profileContainer = document.querySelector(".profile-container");
+  const profileListingsContainer = document.querySelector(
+    ".profile-listings-container"
+  );
   function checkCredentials() {
     const checkToken = storage.load("token");
     if (!checkToken) {

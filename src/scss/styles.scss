@@ -8,6 +8,7 @@ body {
   background-color: map-get($colours, primary) !important;
   font-family: "Manrope", sans-serif !important;
   color: map-get($colours, tertiary) !important;
+  min-height: 100vh;
 }
 
 header {
@@ -131,6 +132,7 @@ nav {
 
 .slides img {
   height: 100%;
+  cursor: pointer;
 }
 
 .rounded-circle {
@@ -186,8 +188,7 @@ nav {
   height: 40px;
 }
 
-.success-message {
-  color: map-get($colours, secondary);
+.form-message {
   display: none;
 }
 

@@ -2,17 +2,14 @@ import { getSearchedListings, getListings } from "../api/listings/read.mjs";
 import { renderListings } from "../templates/listings.mjs";
 
 export async function displaySearchedListings() {
-  const listingsArray = await getListings();
   const searchInput = document.querySelector(".search-field input");
-  const searchValue = searchInput.value;
-  const searchedListings = await getSearchedListings(searchValue);
   const searchButton = document.querySelector(".search-button");
   const listingsContainer = document.querySelector(".listings-container");
-  console.log(listingsContainer);
 
   searchButton.addEventListener("click", search);
 
   async function search() {
+    const listingsArray = await getListings();
     const searchInput = document.querySelector(".search-field input");
     const searchValue = searchInput.value;
     const searchedListings = await getSearchedListings(searchValue);
@@ -27,7 +24,7 @@ export async function displaySearchedListings() {
     console.log(searchResults);
 
     listingsContainer.innerHTML = "";
-    renderListings(searchResults, listingsContainer);
+    renderListings(searchedListings, listingsContainer);
   }
 
   searchInput.onkeyup = function (event) {
