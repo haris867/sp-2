@@ -1,5 +1,6 @@
 import { getProfile } from "../api/listings/read.mjs";
 import { renderProfile } from "../templates/profile.mjs";
+import { createFormListener } from "./createListing.mjs";
 import * as storage from "../storage/index.mjs";
 
 const queryString = document.location.search;
@@ -27,4 +28,5 @@ export async function displayProfile() {
     profileContainer,
     profileListingsContainer
   );
+  createFormListener();
 }

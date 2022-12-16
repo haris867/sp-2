@@ -20,8 +20,8 @@ header {
 }
 
 .hamburger {
-  top: 20px;
-  right: 5px;
+  top: 23px;
+  right: 8px;
   &-icon {
     color: map-get($colours, tertiary) !important;
     border: map-get($colours, tertiary) !important;
@@ -36,6 +36,10 @@ header {
     background-color: map-get($colours, primary) !important;
     z-index: 1000;
   }
+}
+
+.active {
+  font-weight: bolder;
 }
 
 .description-input {
@@ -70,18 +74,6 @@ header {
 
 .nav-item a:hover {
   font-style: italic;
-}
-
-.profile-option {
-  cursor: pointer;
-}
-
-.profile-option:hover {
-  font-style: italic;
-}
-
-.hamburger svg {
-  min-width: 50px;
 }
 
 nav {

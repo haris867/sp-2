@@ -48,8 +48,5 @@ export function createFormListener() {
 
     createListing(listing);
     form.reset();
-    setTimeout(() => {
-      location.reload();
-    }, "2000");
   });
 }

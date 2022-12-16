@@ -34,7 +34,9 @@ export async function createBid(bid, id) {
   const formMessage = document.querySelector(".form-message");
 
   if (result.errors) {
-    formMessage.innerHTML = result.errors[0].message;
+    formMessage.innerHTML =
+      result.errors[0].message +
+      `. Check out other listings <a href="listings.html" class="highlighted">HERE</a>!`;
     formMessage.style.display = "block";
   } else {
     formMessage.innerHTML = "Adding bid...";

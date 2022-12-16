@@ -7,10 +7,7 @@ import { displayProfile } from "././src/js/handlers/profile.mjs";
 import { removeCreateForm } from "././src/js/templates/hideCreateForm.mjs";
 import { displaySearchedListings } from "././src/js/handlers/displaySearchResults.mjs";
 import { updateAvatarListener } from "././src/js/handlers/updateAvatar.mjs";
-import {
-  removeProfileSettings,
-  removeUpdateAvatarForm,
-} from "././src/js/templates/hideUpdateAvatar.mjs";
+import { removeProfileSettings } from "././src/js/templates/hideUpdateAvatar.mjs";
 
 export function router() {
   const path = location.pathname;
@@ -34,10 +31,7 @@ export function router() {
       displayProfile();
       updateAvatarListener();
       removeProfileSettings();
-      createFormListener();
       removeCreateForm();
       break;
-    default:
-      location.href = "/listings.html";
   }
 }
