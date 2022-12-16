@@ -7,7 +7,10 @@ import { displayProfile } from "././src/js/handlers/profile.mjs";
 import { removeCreateForm } from "././src/js/templates/hideCreateForm.mjs";
 import { displaySearchedListings } from "././src/js/handlers/displaySearchResults.mjs";
 import { updateAvatarListener } from "././src/js/handlers/updateAvatar.mjs";
-import { removeUpdateAvatarForm } from "././src/js/templates/hideUpdateAvatar.mjs";
+import {
+  removeProfileSettings,
+  removeUpdateAvatarForm,
+} from "././src/js/templates/hideUpdateAvatar.mjs";
 
 export function router() {
   const path = location.pathname;
@@ -30,7 +33,7 @@ export function router() {
     case "/profile.html":
       displayProfile();
       updateAvatarListener();
-      removeUpdateAvatarForm();
+      removeProfileSettings();
       createFormListener();
       removeCreateForm();
       break;

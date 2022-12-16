@@ -89,11 +89,7 @@
             class="profile d-flex justify-content-between col-12 col-md-9 col-lg-8 col-xl-7"
           >
             <div class="d-flex placeholder-glow">
-              <img
-                class="rounded-circle me-4 placeholder"
-                src="${profileImage}"
-                alt=""
-              />
+              <img class="rounded-circle me-4 placeholder" src="" alt="" />
               <div class="align-self-center">
                 <div class="placeholder-glow">
                   <span
@@ -104,6 +100,51 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        class="collapse col-12 col-md-7 col-lg-6 col-xl-6 mx-auto mt-4"
+        id="profile-options"
+      >
+        <div class="modal-content rounded-4 shadow-lg mb-5 d-flex">
+          <div class="modal-header p-5 pb-4 border-bottom-0">
+            <h1 class="fw-bold mb-0 fs-2">Options</h1>
+          </div>
+          <ul class="navbar-nav ms-5 mb-3">
+            <li class="nav-item my-2">
+              <span
+                class="profile-option fs-5"
+                data-bs-toggle="collapse"
+                data-bs-target="#wins-container"
+                aria-controls="wins-container"
+                aria-expanded="false"
+                >Wins</span
+              >
+            </li>
+            <li class="nav-item my-2">
+              <span
+                class="profile-option fs-5"
+                data-bs-toggle="collapse"
+                data-bs-target="#update-avatar"
+                aria-controls="update-avatar"
+                aria-expanded="false"
+                >Update your avatar</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="collapse col-12 col-md-7 col-lg-6 col-xl-6 mx-auto mt-4"
+        id="wins-container"
+      >
+        <div class="modal-content rounded-4 shadow-lg mb-5">
+          <div class="modal-header p-5 pb-4 border-bottom-0">
+            <h1 class="fw-bold mb-0 fs-2">Wins</h1>
+          </div>
+          <div
+            class="modal-body wins-listings-container mb-6 p-5 pt-0 d-flex flex-column"
+          ></div>
         </div>
       </div>
       <div

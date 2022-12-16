@@ -72,6 +72,14 @@ header {
   font-style: italic;
 }
 
+.profile-option {
+  cursor: pointer;
+}
+
+.profile-option:hover {
+  font-style: italic;
+}
+
 .hamburger svg {
   min-width: 50px;
 }

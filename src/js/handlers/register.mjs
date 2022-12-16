@@ -4,7 +4,6 @@ export function registerFormListener() {
   const form = document.querySelector("#registerForm");
 
   form.addEventListener("submit", (e) => {
-    const formMessage = document.querySelector(".form-message");
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);

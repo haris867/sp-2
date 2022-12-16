@@ -273,7 +273,7 @@ export function renderListing(listing, container) {
               </div>
               <div class="col-12 d-flex justify-content-between mb-4">
                 <div>
-                  <p class="fs-4 highlighted fw-bold">Ends in:</p>
+                  <p class="fs-4 highlighted fw-bold">Deadline:</p>
                 </div>
                 <div class="d-flex fs-5">
                 ${endsAt}
