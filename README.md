@@ -2,7 +2,7 @@
 
 ![Auction House image](https://user-images.githubusercontent.com/73777398/208264530-1a4d0856-422c-40f7-9457-e36908380bc0.png)
 
-[Auction House](auction-house-haris.netlify.app/) is an online auction house where registered users can create listings and bid on others listings.
+[Auction House](https://auction-house-haris.netlify.app/) is an online auction house where registered users can create listings and bid on others listings.
 
 ## Description
 
