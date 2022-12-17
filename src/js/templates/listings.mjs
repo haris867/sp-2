@@ -6,6 +6,17 @@ export function checkProfileImage(image) {
   }
 }
 
+/**
+ * Renders provided listings into specific format.
+ * @param {object} listings Listings array
+ * @param {element} container Listings container
+ * @example
+ * ```js
+ * renderListings(listings, container)
+ * // Renders listings into specific format using provided listings array.
+ * ```
+ */
+
 export function renderListings(listings, container) {
   console.log(listings);
   for (let i = 0; i < listings.length; i++) {
@@ -18,6 +29,15 @@ export function renderListings(listings, container) {
       }
     }
 
+    /**
+     * Checks if image exists, and if not, provides default image.
+     * @param {element} image image
+     * @example
+     * ```js
+     * checkListingImages(image)
+     * // Checks if image exists and if so, returns image. If not, it returns default image URL.
+     * ```
+     */
     function checkListingImages(image) {
       if (!image || image === "") {
         return "https://user-images.githubusercontent.com/73777398/206862719-84cd2485-da46-475c-aa82-adc8036f28e4.png";

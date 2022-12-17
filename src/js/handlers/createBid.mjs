@@ -5,6 +5,15 @@ const id = parameters.get("id");
 import * as storage from "../storage/index.mjs";
 const token = storage.load("token");
 
+/**
+ * Listens for submit event on bid form and creates a bid using form input value
+ * @example
+ * ```js
+ * bidFormListener()
+ * // Calls createBid function using provided input value
+ * ```
+ */
+
 export function bidFormListener() {
   console.log(token);
   const form = document.querySelector("#bidForm");

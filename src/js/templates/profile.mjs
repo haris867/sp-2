@@ -1,6 +1,14 @@
 import { getListing } from "../api/listings/read.mjs";
-import { displayWins } from "../handlers/wins.mjs";
 import { renderWins } from "./wins.mjs";
+
+/**
+ * Renders profile using provided profile object.
+ * @example
+ * ```js
+ * renderProfile()
+ * // Renders profile listing using provided profile object and listings array, into profileContainer and listingsContainer.
+ * ```
+ */
 
 export function renderProfile(
   profile,
@@ -9,8 +17,8 @@ export function renderProfile(
   listingsContainer
 ) {
   var winsContainer = document.querySelector(".wins-listings-container");
+
   function showWins() {
-    displayWins(profile.wins);
     const profileWins = profile.wins;
     console.log(profileWins);
     if (!profileWins || profileWins.length === 0) {

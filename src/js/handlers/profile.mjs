@@ -7,6 +7,15 @@ const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
 const name = parameters.get("name");
 
+/**
+ * Displays profile by calling renderProfile function.
+ * @example
+ * ```js
+ * displayProfile()
+ * // Displays profile by calling renderProfile function with profile, listingsArray, profileContainer and profileListingsContainer.
+ * ```
+ */
+
 export async function displayProfile() {
   const profile = await getProfile(name);
   const listingsArray = profile.listings;
@@ -14,6 +23,16 @@ export async function displayProfile() {
   const profileListingsContainer = document.querySelector(
     ".profile-listings-container"
   );
+
+  /**
+   * Checks if user is logged in, and if so, redirects to listings page.
+   * @example
+   * ```js
+   * checkCredentials()
+   * // Redirects to listings page if user is logged in already.
+   * ```
+   */
+
   function checkCredentials() {
     const checkToken = storage.load("token");
     if (!checkToken) {

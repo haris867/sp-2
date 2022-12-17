@@ -4,6 +4,15 @@ const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
 const id = parameters.get("id");
 
+/**
+ * Listens for submit event on update listing form and calls updateListing function.
+ * @example
+ * ```js
+ * updateListingListener()
+ * // Calls updateListing function with new values and ID of listing to be updated.
+ * ```
+ */
+
 export function updateListingListener() {
   const form = document.querySelector("#updateForm");
   const addTagIcon = document.querySelector(".add-tag-icon-update");

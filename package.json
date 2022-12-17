@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "sass src/scss:dist/css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier -w src/**/*.mjs",
+    "lint": "eslint src/**/*.mjs",
     "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
@@ -23,7 +25,9 @@
     "bootstrap": "^5.2.3"
   },
   "devDependencies": {
+    "eslint": "^8.30.0",
     "live-server": "^1.2.2",
+    "prettier": "^2.8.1",
     "sass": "^1.56.1"
   }
 }

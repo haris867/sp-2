@@ -1,5 +1,16 @@
 import * as storage from "../storage/index.mjs";
 
+/**
+ * Renders provided listings array into provided container.
+ * @param {object} listing Listings array
+ * @param {element} container Listing container
+ * @example
+ * ```js
+ * renderWins(listing, container)
+ * // Renders provided listings into provided container.
+ * ```
+ */
+
 export function renderWins(listing, container) {
   const profile = storage.load("profile");
   console.log(listing);

@@ -15,6 +15,15 @@ console.log(profile);
 
 console.log(id);
 
+/**
+ * Renders listing by calling renderListing function with listingData and listingContainer.
+ * @example
+ * ```js
+ * displayListing()
+ * // Displays listing by calling renderListing function with ID from query string.
+ * ```
+ */
+
 export async function displayListing() {
   const listingData = await getListing(id);
   const listingContainer = document.querySelector(".listing-container");

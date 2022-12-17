@@ -1,3 +1,11 @@
+/**
+ * Listens for click event on add tag icon and adds tag input to the form
+ * @example
+ * ```js
+ * addTagInputs()
+ * // Adds a tag input field to the form
+ * ```
+ */
 export function addTagInputs() {
   const tagInputContainer = document.querySelector(".tag-input-container");
   const tagInputsAmount = tagInputContainer.childElementCount;
@@ -17,6 +25,15 @@ export function addTagInputs() {
                                     <label for="floatingInput">Tag</label>
                                   </div>`;
 }
+
+/**
+ * Listens for click event on add image icon and adds image input to the form
+ * @example
+ * ```js
+ * addImageInputs()
+ * // Adds a image input field to the form
+ * ```
+ */
 
 export function addImageInputs(e) {
   e.preventDefault();

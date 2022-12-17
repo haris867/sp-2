@@ -1,43 +1,60 @@
 import { checkProfileImage } from "./listings.mjs";
 import * as storage from "../storage/index.mjs";
 
+/**
+ * Renders provided listing into specific format according to if user is logged in.
+ * @param {object} listing Listing data
+ * @param {element} container Listing container
+ * @example
+ * ```js
+ * renderListing(listing, container)
+ * // Renders provided listing into specific format, with and without certain components, depending if user is authorized.
+ * ```
+ */
+
 export function renderListing(listing, container) {
   const profile = storage.load("profile");
   console.log(listing);
 
+  /**
+   * Checks if name of logged in user is equal to name of creator of currently viewed listing, and if not, removes delete listing icon.
+   * @example
+   * ```js
+   * deleteIconCheck()
+   * // Hides delete listing icon if name of logged in user is not equal to name of creator of currently viewed listing.
+   * ```
+   */
   function deleteIconCheck() {
     if (profile && profile.name === listing.seller.name) {
       return `
       <div class="d-flex justify-content-between text-break">
-      <h1 class="heading fs-1">${listing.title}</h1>
-      <div class="delete-icon d-flex justify-content-center align-items-center mb-2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3" 
-                  data-bs-toggle="collapse"
-                  data-bs-target="#delete-listing"
-                  aria-expanded="false"
-                  aria-controls="delete-listing"
-                  viewBox="0 0 16 16">
-            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-        </svg>
-        </div>
-        </div>
-        <div
-        <div class="collapse delete-listing" id="delete-listing">
-                <div class="modal-content rounded-4 shadow-lg mb-5 d-flex align-items-center">
-                  <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h1 class="heading fs-1">${listing.title}</h1>
+          <div class="delete-icon d-flex justify-content-center align-items-center mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3" 
+                    data-bs-toggle="collapse"
+                    data-bs-target="#delete-listing"
+                    aria-expanded="false"
+                    aria-controls="delete-listing"
+                    viewBox="0 0 16 16">
+                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+              </svg>
+            </div>
+      </div>
+          <div class="collapse delete-listing" id="delete-listing">
+            <div class="modal-content rounded-4 shadow-lg mb-5 d-flex align-items-center">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
                     <h1 class="fw-bold mb-0 fs-2">Are you sure?</h1>
-                    </div>
-                  <div class="modal-body mb-6 p-5 pt-0 d-flex">
+                </div>
+                <div class="modal-body mb-6 p-5 pt-0 d-flex">
                         <button
                           class="py-2 ms-2 btn btn-outline-primary rounded-3 delete-button"
                           type="submit"
                         >
                           DELETE
                         </button>
-                      </div>
-                  </div>
                 </div>
-              </div>`;
+              </div>
+            </div>`;
     } else {
       return `<div class="d-flex justify-content-between  text-break">
       <h1 class="heading fs-1">${listing.title}</h1>
@@ -46,6 +63,15 @@ export function renderListing(listing, container) {
   }
 
   const deleteIcon = deleteIconCheck();
+
+  /**
+   * Checks if name of logged in user is equal to name of creator of currently viewed listing, and if so, removes place bid form. If not logged in, if links to login.
+   * @example
+   * ```js
+   * placeBid()
+   * // Creates place bid section based on if user is authorized and/or viewing their own or other users posts.
+   * ```
+   */
 
   function placeBid() {
     if (profile && profile.name === listing.seller.name) {
@@ -151,6 +177,15 @@ export function renderListing(listing, container) {
   }
 
   const endsAt = dateFormat(date);
+
+  /**
+   * Renders bids section in specific format depending on if there are any bids.
+   * @example
+   * ```js
+   * displayBids()
+   * // Creates view bids section containing bids, if there are any.
+   * ```
+   */
 
   function displayBids() {
     var bidsArray = listing.bids;

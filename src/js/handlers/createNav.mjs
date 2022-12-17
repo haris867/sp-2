@@ -3,6 +3,16 @@ var name = "";
 const profile = storage.load("profile");
 const token = storage.load("token");
 
+/**
+ * Checks is user is logged in and creates nav accordingly
+ * @param {element} container Nav container
+ * @example
+ * ```js
+ * createProfileNav(container)
+ * // Creates one nav if user is logged in and another if not
+ * ```
+ */
+
 export function createProfileNav(container) {
   if (token) {
     container.innerHTML = `<ul class="navbar-nav me-auto mb-2 mb-md-0">

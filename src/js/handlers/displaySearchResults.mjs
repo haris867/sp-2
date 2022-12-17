@@ -1,6 +1,15 @@
 import { getSearchedListings, getListings } from "../api/listings/read.mjs";
 import { renderListings } from "../templates/listings.mjs";
 
+/**
+ * Listens for click event on search button and calls renderListings function with search results.
+ * @example
+ * ```js
+ * displaySearchedListings()
+ * // Calls renderListings function to display search results.
+ * ```
+ */
+
 export async function displaySearchedListings() {
   const searchInput = document.querySelector(".search-field input");
   const searchButton = document.querySelector(".search-button");

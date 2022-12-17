@@ -2,6 +2,15 @@ import { createListing } from "../api/listings/create.mjs";
 import { addTagInputs } from "../handlers/formArrays.mjs";
 import { addImageInputs } from "../handlers/formArrays.mjs";
 
+/**
+ * Listens for submit event on create listing form and creates a listing using form input values
+ * @example
+ * ```js
+ * createFormListener()
+ * // Calls createListing function using provided input values
+ * ```
+ */
+
 export function createFormListener() {
   const form = document.querySelector("#createForm");
   const addTagIcon = document.querySelector(".add-tag-icon");

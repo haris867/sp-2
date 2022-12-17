@@ -38,33 +38,8 @@ header {
   }
 }
 
-.active {
-  font-weight: bolder;
-}
-
-.description-input {
-  height: 100px !important;
-}
-
 .log-button {
   width: 100px !important;
-}
-
-.listings-icon {
-  top: 16px;
-  right: 49px;
-  color: map-get($colours, tertiary);
-}
-
-.listings-icon:hover {
-  text-decoration: none;
-  color: map-get($colours, tertiary);
-}
-
-.search-icon {
-  background-color: map-get($colours, primary) !important;
-  border: none;
-  color: map-get($colours, tertiary) !important;
 }
 
 .nav-item a {
@@ -135,16 +110,18 @@ nav {
   cursor: pointer;
 }
 
+.search-icon {
+  background-color: map-get($colours, primary) !important;
+  border: none;
+  color: map-get($colours, tertiary) !important;
+}
+.description-input {
+  height: 100px !important;
+}
+
 .rounded-circle {
   width: 30px;
   height: 30px;
-}
-
-.placeholder {
-  &-profile {
-    min-width: 150px;
-    height: 1.5rem;
-  }
 }
 
 .tag-icon {
@@ -226,25 +203,17 @@ svg {
   color: map-get($colours, primary) !important;
 }
 
-.highlighted {
-  color: map-get($colours, secondary);
-}
-
 footer {
   min-height: 120px;
   bottom: 0;
-}
-
-.copyright p {
-  font-size: 0.8em;
 }
 
 .footer-logo-container img {
   max-width: 80px;
 }
 
-footer ul {
-  list-style: none;
+.highlighted {
+  color: map-get($colours, secondary);
 }
 
 .appear-animation {
