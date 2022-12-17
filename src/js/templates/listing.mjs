@@ -145,8 +145,12 @@ export function renderListing(listing, container) {
 
   const date = listing.endsAt;
 
-  const time = new Date(date);
-  const endsAt = time.toLocaleString();
+  function dateFormat(date) {
+    const time = new Date(date);
+    return time.toLocaleString();
+  }
+
+  const endsAt = dateFormat(date);
 
   function displayBids() {
     var bidsArray = listing.bids;
@@ -155,6 +159,8 @@ export function renderListing(listing, container) {
     });
 
     for (let i = 0; i < bidsArray.length; i++) {
+      const created = bidsArray[i].created;
+      const bidCreated = dateFormat(created);
       bids += `<div class="bid mb-4">
                   <div
                     class="col-12 d-flex justify-content-between author fs-4 fw-bold"
@@ -174,7 +180,7 @@ export function renderListing(listing, container) {
                     </div>
                   </div>
                   <div class="highlighted">
-                    <span class="me-3">${bidsArray[i].created}</span>
+                    <span class="me-3">${bidCreated}</span>
                   </div>
                 </div>`;
     }

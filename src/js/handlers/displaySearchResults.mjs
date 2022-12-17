@@ -5,6 +5,7 @@ export async function displaySearchedListings() {
   const searchInput = document.querySelector(".search-field input");
   const searchButton = document.querySelector(".search-button");
   const listingsContainer = document.querySelector(".listings-container");
+  const listingsArray = await getListings();
 
   searchButton.addEventListener("click", search);
 
@@ -24,7 +25,7 @@ export async function displaySearchedListings() {
     console.log(searchResults);
 
     listingsContainer.innerHTML = "";
-    renderListings(searchedListings, listingsContainer);
+    renderListings(searchResults, listingsContainer);
   }
 
   searchInput.onkeyup = function (event) {

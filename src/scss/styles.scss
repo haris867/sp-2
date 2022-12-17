@@ -20,8 +20,8 @@ header {
 }
 
 .hamburger {
-  top: 23px;
-  right: 8px;
+  top: 32px;
+  right: 13px;
   &-icon {
     color: map-get($colours, tertiary) !important;
     border: map-get($colours, tertiary) !important;
@@ -248,16 +248,19 @@ footer ul {
 }
 
 .appear-animation {
-  animation: appear-ani 3s 1s forwards ease-in;
+  animation-name: appear-ani;
+  position: relative;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 @keyframes appear-ani {
-  0% {
-    visibility: hidden !important;
-    opacity: 0 !important;
+  50% {
+    opacity: 0.6;
   }
   100% {
-    visibility: visible !important;
-    opacity: 1 !important;
+    opacity: 1;
   }
 }
