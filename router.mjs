@@ -20,7 +20,7 @@ export function router() {
     case "/register.html":
       registerFormListener();
       break;
-    case "/listings.html":
+    case "/sp-2/listings.html":
       displayListings();
       displaySearchedListings();
       break;
