@@ -21,11 +21,8 @@ export function checkListings(listings) {
       return new Date(b.created) - new Date(a.created);
     });
 
-    console.log(sortedListings);
     for (let i = 0; i < sortedListings.length; i++) {
       const listingImage = checkImage(listings[i].media[0]);
-
-      console.log(listings);
 
       listingResult += `<div class="listing">
             <a href="listing.html?id=${listings[i].id}">

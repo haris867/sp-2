@@ -26,7 +26,6 @@ export function removeUpdateAvatarForm() {
   const updateAvatarContainer = document.querySelector("#profile-options");
   const profile = storage.load("profile");
   const profileName = document.querySelector(".profile-name");
-  console.log(profileSettingsIcon);
   if (!profile || profile.name !== profileName.innerHTML) {
     profileSettingsIcon.remove();
     updateAvatarContainer.remove();

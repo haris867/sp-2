@@ -13,7 +13,6 @@ import { getListing } from "../api/listings/read.mjs";
 
 export function showWins(profile, winsContainer) {
   const profileWins = profile.wins;
-  console.log(profileWins);
   if (!profileWins || profileWins.length === 0) {
     winsContainer.innerHTML = "No wins yet";
   } else if (profileWins && profileWins[0] !== "") {

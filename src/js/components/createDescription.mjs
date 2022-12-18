@@ -21,7 +21,6 @@ export function displayDescription(listing) {
       }
     });
   }
-  console.log(listingTags.length);
 
   if (listing.description) {
     listingDescription = `<div class="col-12 my-5">

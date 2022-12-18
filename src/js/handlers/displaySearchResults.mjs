@@ -28,10 +28,8 @@ export async function displaySearchedListings() {
         listing.title.toLowerCase().includes(searchValue.toLowerCase()) ||
         listing.seller.name.toLowerCase().includes(searchValue.toLowerCase())
     );
-    console.log(filteredListings);
 
     const searchResults = searchedListings.concat(filteredListings);
-    console.log(searchResults);
 
     listingsContainer.innerHTML = "";
     renderListings(searchResults, listingsContainer);

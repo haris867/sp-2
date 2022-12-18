@@ -17,7 +17,6 @@ export function updateListingListener() {
   const form = document.querySelector("#updateForm");
   const addTagIcon = document.querySelector(".add-tag-icon-update");
   const addImageIcon = document.querySelector(".add-image-icon-update");
-  console.log(addTagIcon);
   addTagIcon.addEventListener("click", addTagInputs);
   addImageIcon.addEventListener("click", addImageInputs);
 

@@ -17,14 +17,12 @@ export function updateAvatarListener() {
     const profile = storage.load("profile");
 
     const name = profile.name;
-    console.log(name);
     const form = e.target;
 
     const updateImageUrl = form.updateImageUrl.value;
     const updateAvatarImage = {
       avatar: updateImageUrl,
     };
-    console.log(updateAvatarImage);
     updateAvatar(name, updateAvatarImage);
     // location.reload();
   });

@@ -150,7 +150,6 @@ export function renderListing(listing, container) {
    * ```
    */
   function selectImage() {
-    console.log(this.src);
     const thumbnail = document.querySelector(".thumbnail");
     thumbnail.src = this.src;
   }

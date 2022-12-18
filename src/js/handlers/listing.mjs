@@ -11,9 +11,6 @@ const parameters = new URLSearchParams(queryString);
 const id = parameters.get("id");
 
 const profile = storage.load("profile");
-console.log(profile);
-
-console.log(id);
 
 /**
  * Renders listing by calling renderListing function with listingData and listingContainer.

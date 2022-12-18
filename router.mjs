@@ -14,7 +14,6 @@ export function router() {
 
   switch (path) {
     case "/login.html":
-      console.log("Hey");
       loginFormListener();
       break;
     case "/register.html":

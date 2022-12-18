@@ -15,7 +15,6 @@ const token = storage.load("token");
  */
 
 export function bidFormListener() {
-  console.log(token);
   const form = document.querySelector("#bidForm");
   if (token) {
     form.addEventListener("submit", (e) => {
@@ -27,8 +26,6 @@ export function bidFormListener() {
       const bid = {
         amount: Number(bidAmount),
       };
-
-      console.log(bid);
 
       createBid(bid, id);
       form.reset();

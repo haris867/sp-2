@@ -16,8 +16,6 @@ export async function login(profile) {
 
     const formMessage = document.querySelector(".form-message");
 
-    console.log(result);
-
     if (result.errors) {
       formMessage.innerHTML = result.errors[0].message;
       formMessage.style.display = "block";

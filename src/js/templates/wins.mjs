@@ -14,7 +14,6 @@ import * as storage from "../storage/index.mjs";
 
 export function renderWins(listing, container) {
   const profile = storage.load("profile");
-  console.log(listing);
 
   var image = listing.media[0];
 

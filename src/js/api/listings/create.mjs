@@ -55,7 +55,6 @@ export async function createBid(bid, id) {
     });
 
     const result = await response.json();
-    console.log(result);
 
     const formMessage = document.querySelector(".form-message");
 

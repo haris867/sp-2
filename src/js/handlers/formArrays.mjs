@@ -45,7 +45,7 @@ export function addImageInputs(e) {
     addIcon.classList.remove("d-flex");
     addIcon.style.display = "none";
   }
-  console.log(imageInputsAmount);
+
   const input = `
                                     <input
                                       name="image-url"
