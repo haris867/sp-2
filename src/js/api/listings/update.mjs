@@ -21,8 +21,12 @@ export async function updateListing(listingData, id) {
       body: JSON.stringify(listingData),
     });
 
+    const formMessage = document.querySelector(".update-listing-message");
+    formMessage.innerHTML = "Updating listing...";
+
     return await response.json();
   } catch (error) {
+    formMessage.innerHTML = "Somewthing went wrong..";
     return error;
   }
 }
@@ -47,9 +51,12 @@ export async function updateAvatar(name, avatar) {
       body: JSON.stringify(avatar),
     });
 
+    const formMessage = document.querySelector(".update-form-message");
+    formMessage.innerHTML = "Updating avatar...";
     location.reload();
     return await response.json();
   } catch (error) {
+    formMessage.innerHTML = "Something went wrong.. Please try again.";
     return error;
   }
 }

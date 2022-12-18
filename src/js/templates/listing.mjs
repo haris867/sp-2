@@ -5,6 +5,7 @@ import { dateFormat } from "../components/dateFormat.mjs";
 import { displayBids } from "../components/displayBids.mjs";
 import * as storage from "../storage/index.mjs";
 import { displayDescription } from "../components/createDescription.mjs";
+import { findHighestBid } from "../components/checkHighestBid.mjs";
 
 /**
  * Renders provided listing into specific format according to if user is logged in.
@@ -21,15 +22,6 @@ export function renderListing(listing, container) {
   const profile = storage.load("profile");
 
   const deleteIcon = deleteIconCheck(profile, listing);
-
-  function findHighestBid() {
-    const bidData = listing.bids[0];
-    if (!bidData) {
-      return 0;
-    } else {
-      return bidData.amount;
-    }
-  }
 
   var images = "";
 
@@ -69,7 +61,6 @@ export function renderListing(listing, container) {
 
   imageSlider();
   const profileImage = checkImage(listing.seller.avatar);
-  const highestBid = findHighestBid();
 
   container.innerHTML = `
           <div class="row d-flex justify-content-center">
@@ -106,7 +97,9 @@ export function renderListing(listing, container) {
                 </div>
                 <div class="d-flex align-items-center">
                   <span class="highlighted mb-3 me-2">now:</span>
-                  <p><span class="fs-2 fw-bold">${highestBid}</span> &copy</p>
+                  <p><span class="fs-2 fw-bold">${findHighestBid(
+                    listing
+                  )}</span> &copy</p>
                 </div>
               </div>
               <div class="row slides mb-4">

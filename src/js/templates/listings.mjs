@@ -12,7 +12,7 @@ import { checkImage } from "../components/imageCheck.mjs";
 
 export function renderListings(listings, container) {
   for (let i = 0; i < listings.length; i++) {
-    function findHighestBid() {
+    function findHighestBids() {
       const bidData = listings[i].bids.pop();
       if (!bidData) {
         return 0;
@@ -23,7 +23,7 @@ export function renderListings(listings, container) {
 
     const listingImage = checkImage(listings[i].media[0]);
     const profileImage = checkImage(listings[i].seller.avatar);
-    const highestBid = findHighestBid();
+    const highestBid = findHighestBids();
     container.innerHTML += `
     <div class="listing-container col-12 col-md-9 col-lg-8 my-4">
          <div class="listing">

@@ -28,6 +28,7 @@ export async function displayListing() {
   const listingData = await getListing(id);
   const listingContainer = document.querySelector(".listing-container");
   renderListing(listingData, listingContainer);
+  document.title += ` | ${listingData.title}`;
   const authorName = document.querySelector(".author-name");
 
   if (profile) {

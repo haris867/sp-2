@@ -1,8 +1,6 @@
-import { getListing } from "../api/listings/read.mjs";
 import { showWins } from "../components/displayWins.mjs";
 import { checkImage } from "../components/imageCheck.mjs";
 import { checkListings } from "../components/checkListings.mjs";
-import { renderWins } from "./wins.mjs";
 
 /**
  * Renders profile using provided profile object.
