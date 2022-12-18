@@ -3,7 +3,7 @@ import { renderListing } from "../templates/listing.mjs";
 import { updateListingListener } from "./updateListing.mjs";
 import { bidFormListener } from "./createBid.mjs";
 import { deleteListener } from "./delete.mjs";
-import { removeUpdateListingForm } from "../templates/hideUpdateListing.mjs";
+import { removeUpdateListingForm } from "../components/hideUpdateListing.mjs";
 import * as storage from "../storage/index.mjs";
 
 const queryString = document.location.search;

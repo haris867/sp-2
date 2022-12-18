@@ -1,11 +1,4 @@
-export function checkProfileImage(image) {
-  if (!image || image === "") {
-    return "https://user-images.githubusercontent.com/73777398/206862719-84cd2485-da46-475c-aa82-adc8036f28e4.png";
-  } else {
-    return image;
-  }
-}
-
+import { checkImage } from "../components/imageCheck.mjs";
 /**
  * Renders provided listings into specific format.
  * @param {object} listings Listings array
@@ -18,7 +11,6 @@ export function checkProfileImage(image) {
  */
 
 export function renderListings(listings, container) {
-  console.log(listings);
   for (let i = 0; i < listings.length; i++) {
     function findHighestBid() {
       const bidData = listings[i].bids.pop();
@@ -29,27 +21,11 @@ export function renderListings(listings, container) {
       }
     }
 
-    /**
-     * Checks if image exists, and if not, provides default image.
-     * @param {element} image image
-     * @example
-     * ```js
-     * checkListingImages(image)
-     * // Checks if image exists and if so, returns image. If not, it returns default image URL.
-     * ```
-     */
-    function checkListingImages(image) {
-      if (!image || image === "") {
-        return "https://user-images.githubusercontent.com/73777398/206862719-84cd2485-da46-475c-aa82-adc8036f28e4.png";
-      } else {
-        return image;
-      }
-    }
-    const listingImage = checkListingImages(listings[i].media[0]);
-    const profileImage = checkProfileImage(listings[i].seller.avatar);
+    const listingImage = checkImage(listings[i].media[0]);
+    const profileImage = checkImage(listings[i].seller.avatar);
     const highestBid = findHighestBid();
     container.innerHTML += `
-    <div class="listing-container col-12 col-md-9 col-lg-8 col-xl-7 my-4">
+    <div class="listing-container col-12 col-md-9 col-lg-8 my-4">
          <div class="listing">
             
          <div class="d-flex justify-content-between">

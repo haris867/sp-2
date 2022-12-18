@@ -1,3 +1,4 @@
+import { checkImage } from "../components/imageCheck.mjs";
 import * as storage from "../storage/index.mjs";
 
 /**
@@ -16,17 +17,8 @@ export function renderWins(listing, container) {
   console.log(listing);
 
   var image = listing.media[0];
-  console.log(image);
 
-  function checkListingImages(img) {
-    if (!img || img === "") {
-      return "https://user-images.githubusercontent.com/73777398/206862719-84cd2485-da46-475c-aa82-adc8036f28e4.png";
-    } else {
-      return img;
-    }
-  }
-
-  const listingImg = checkListingImages(image);
+  const listingImg = checkImage(image);
 
   container.innerHTML += `
           <div class="listing">

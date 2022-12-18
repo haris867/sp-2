@@ -1,3 +1,5 @@
+// Styles
+
 $colours: (
   "primary": #30044e,
   "secondary": #fbb1e1,
@@ -216,6 +218,8 @@ footer {
   color: map-get($colours, secondary);
 }
 
+// animation
+
 .appear-animation {
   animation-name: appear-ani;
   position: relative;
@@ -231,5 +235,34 @@ footer {
   }
   100% {
     opacity: 1;
+  }
+}
+
+// Media queries
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    top: 23px !important;
+    right: 93px !important;
+    border: none;
+  }
+  .log-button {
+    margin: 0 0 8px 9px !important;
+  }
+  .hamburger-icon {
+    display: none;
+  }
+
+  .nav-item a {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .listing-container {
+    width: 42% !important;
+  }
+  .listing-img {
+    min-height: 300px;
+    max-height: 300px;
   }
 }

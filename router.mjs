@@ -4,10 +4,10 @@ import { displayListings } from "././src/js/handlers/listings.mjs";
 import { displayListing } from "././src/js/handlers/listing.mjs";
 import { createFormListener } from "././src/js/handlers/createListing.mjs";
 import { displayProfile } from "././src/js/handlers/profile.mjs";
-import { removeCreateForm } from "././src/js/templates/hideCreateForm.mjs";
+import { removeCreateForm } from "./src/js/components/hideCreateForm.mjs";
 import { displaySearchedListings } from "././src/js/handlers/displaySearchResults.mjs";
 import { updateAvatarListener } from "././src/js/handlers/updateAvatar.mjs";
-import { removeProfileSettings } from "././src/js/templates/hideUpdateAvatar.mjs";
+import { removeProfileSettings } from "./src/js/components/hideUpdateAvatar.mjs";
 
 export function router() {
   const path = location.pathname;

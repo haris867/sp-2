@@ -1,7 +1,7 @@
 import { getProfile } from "../api/listings/read.mjs";
 import { renderProfile } from "../templates/profile.mjs";
 import { createFormListener } from "./createListing.mjs";
-import * as storage from "../storage/index.mjs";
+import { checkCredentials } from "../components/checkCredentials.mjs";
 
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
@@ -24,23 +24,7 @@ export async function displayProfile() {
     ".profile-listings-container"
   );
 
-  /**
-   * Checks if user is logged in, and if so, redirects to listings page.
-   * @example
-   * ```js
-   * checkCredentials()
-   * // Redirects to listings page if user is logged in already.
-   * ```
-   */
-
-  function checkCredentials() {
-    const checkToken = storage.load("token");
-    if (!checkToken) {
-      window.location = "login.html";
-    }
-  }
-
-  checkCredentials();
+  checkCredentials;
   renderProfile(
     profile,
     listingsArray,
