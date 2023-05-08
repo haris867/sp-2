@@ -105,6 +105,8 @@ nav {
 
 .listing-img {
   width: 100%;
+  height: calc(10rem + 16vw);
+  object-fit: cover;
 }
 
 .slides img {
