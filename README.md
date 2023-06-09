@@ -35,4 +35,6 @@ npm run build
 
 ## Contact
 
-Email: haris.usman@hotmail.com
+✉️ [Email](mailto:haris@hotmail.com)
+
+💻 [LinkedIn](https://www.linkedin.com/in/haris-usman-3bb83a204/)
