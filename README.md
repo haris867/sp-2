@@ -19,18 +19,26 @@ Auction House is an online auction house which allows for users to view public l
 
 This site is already deployed using Netlify.
 
-### Running
+### Installing
 
-Use npm commands
+1. Clone the repo:
 
 ```bash
-npm i
+git clone https://github.com/haris867/sp-2.git
 ```
 
-and
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+To run the app, run the following commands:
 
 ```bash
-npm run build
+npm run start
 ```
 
 ## Contact
